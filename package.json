@@ -1,0 +1,17 @@
+{
+  "name": "kuangruijian-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "匡锐健个人作品网站 · 杂志编辑风",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "photos": "py scripts/compress_photos.py",
+    "photos:swap": "py scripts/apply_inbox.py"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}
