@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "src": "/d/2026.5.14皮子街摄影/KRJ_6553.jpg",
+    "file": "hero.webp",
+    "title": "街头纪实 · 皮子街",
+    "meta": "KRJ · 2026.05"
+  },
+  "groups": [
+    {
+      "no": 1,
+      "title": "街头纪实",
+      "en": "Street · Wuhan",
+      "note": "老街的清晨与午后，藏着这座城市最真实的呼吸。",
+      "photos": [
+        { "src": "/d/2026.5.14皮子街摄影/KRJ_6613.jpg", "file": "street-01.webp", "title": "老街的寻常午后", "meta": "2026.05 · KRJ", "size": "ph-item--lg" },
+        { "src": "/d/2026.5.14皮子街摄影/KRJ_6847.jpg", "file": "street-02.webp", "title": "水果摊上的日子", "meta": "2026.05 · KRJ", "size": "ph-item--md" },
+        { "src": "/d/2026.5.14皮子街摄影/KRJ_6747.jpg", "file": "street-03.webp", "title": "街边的母女", "meta": "2026.05 · KRJ", "size": "ph-item--tall" },
+        { "src": "/d/2026.5.14皮子街摄影/KRJ_6782.jpg", "file": "street-04.webp", "title": "修鞋的老人", "meta": "2026.05 · KRJ", "size": "ph-item--lg" },
+        { "src": "/d/2026.5.14皮子街摄影/KRJ_6716.jpg", "file": "street-05.webp", "title": "摊下的小猫", "meta": "2026.05 · KRJ", "size": "ph-item--sm" }
+      ]
+    },
+    {
+      "no": 2,
+      "title": "夜色与风景",
+      "en": "Night & Landscape",
+      "photos": [
+        { "src": "/d/2025.10.18夜游东湖/KRJ_9639.jpg", "file": "night-01.webp", "title": "东湖的塔影", "meta": "2025.10 · KRJ", "size": "ph-item--tall" },
+        { "src": "/d/2026.02.08重游白石公园与金庭/KRJ_4948.jpg", "file": "night-02.webp", "title": "暮色里", "meta": "2026.02 · KRJ", "size": "ph-item--lg" }
+      ]
+    },
+    {
+      "no": 3,
+      "title": "舞台与演出",
+      "en": "Stage & Music",
+      "note": "音乐与掌声之间，我更习惯站在侧幕的位置。",
+      "photos": [
+        { "src": "/d/2025.10.14大提琴与钢琴音乐会/KRJ_8913-已增强-降噪.jpg", "file": "stage-01.webp", "title": "大提琴与钢琴", "meta": "2025.10 · KRJ", "size": "ph-item--lg" },
+        { "src": "/d/2025.10.14大提琴与钢琴音乐会/KRJ_8932-已增强-降噪.jpg", "file": "stage-02.webp", "title": "音乐厅的乐手", "meta": "2025.10 · KRJ", "size": "ph-item--md" },
+        { "src": "/d/2025.10.14大提琴与钢琴音乐会/KRJ_8907-已增强-降噪.jpg", "file": "stage-03.webp", "title": "独奏前的一瞬", "meta": "2025.10 · KRJ", "size": "ph-item--sm" }
+      ]
+    },
+    {
+      "no": 4,
+      "title": "生活与细节",
+      "en": "Life & Details",
+      "note": "日常的细节里，才藏着真实的生活。",
+      "photos": [
+        { "src": "/d/2025.11.13秋日闲逛/KRJ_0927.jpg", "file": "life-01.webp", "title": "叼着球的小狗", "meta": "2025.11 · KRJ", "size": "ph-item--lg" },
+        { "src": "/d/2025.12.14华小科烘焙调色后/KRJ_3906.jpg", "file": "life-02.webp", "title": "揉面的男孩", "meta": "2025.12 · KRJ", "size": "ph-item--md" }
+      ]
+    }
+  ]
+}
