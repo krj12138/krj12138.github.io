@@ -1,0 +1,13 @@
+﻿node_modules/
+dist/
+.vite/
+photos-inbox/
+scripts/photo_config.json
+scripts/candidates.txt
+scripts/sheets/
+.DS_Store
+Thumbs.db
+*.log
+deploy-site.ps1
+publish-site.ps1
+*.bak-before-update
