@@ -1,507 +1,2468 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>匡锐健 · 作品集 — 新闻传播本科生 | 新闻采写与评论 | 摄影与文化活动策划</title>
-  <meta name="description" content="匡锐健个人作品集：华中科技大学新闻与信息传播学院广播电视学本科生。深度报道与新闻评论已公开发表，AIGC 短片《山月记》获全球挑战赛亚太区三等奖，校园新闻摄影 41 场次、约 4027 张原图，并主理新媒体内容矩阵「围坐闲谈 / 树下说 / 贝多树下说」。" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Identity, in lines. — 匡锐健 KUANG RUIJIAN</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta name="description" content="匡锐健的个人作品集：记录、创作、组织。新闻采写与评论、AIGC 短片与音乐、摄影与文化活动。">
+<style>
+
+  :root {
+    --paper: #f6f6f1;
+    --ink: #171a17;
+    --muted: #6d7268;
+    --hair: rgba(23, 26, 23, .16);
+    --serif: Georgia, "Times New Roman", Times, serif;
+    --sans: Arial, Helvetica, "Helvetica Neue", sans-serif;
+    --radius: 17px;
+    --gap: 19px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .shell {
+    width: min(1200px, 100% - 2 * clamp(16px, 4vw, 40px));
+    margin: 0 auto;
+  }
+
+  /* Masthead */
+  .masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: clamp(18px, 2.6vw, 30px) 0 clamp(13px, 1.8vw, 18px);
+    border-bottom: 1px solid var(--hair);
+  }
+  .kicker {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .kicker .slash { color: var(--muted); }
+  .controls { display: flex; align-items: center; gap: 14px; }
+  .status {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid var(--hair);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s ease-out, border-color .2s ease-out;
+  }
+  .switch:hover { border-color: rgba(23, 26, 23, .42); }
+  .switch:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .switch .dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    border: 1px solid rgba(23, 26, 23, .5);
+    background: transparent;
+    transition: background .2s ease-out, border-color .2s ease-out;
+  }
+  .switch[aria-pressed="true"] .dot { background: var(--ink); border-color: var(--ink); }
+
+  /* Intro */
+  .intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+    gap: clamp(16px, 3vw, 54px);
+    align-items: end;
+    padding: clamp(32px, 5.2vw, 64px) 0 clamp(28px, 3.8vw, 48px);
+  }
+  .title {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(38px, 4.3vw, 57px);
+    line-height: 1.02;
+    letter-spacing: -.022em;
+  }
+  .lede {
+    margin: 0 0 4px;
+    max-width: 46ch;
+    font-size: clamp(15px, 1.1vw, 17px);
+    line-height: 1.55;
+    color: #4c5149;
+  }
+
+  /* Card row */
+  .plinth-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .plinth {
+    position: relative;
+    padding-bottom: 16px;
+    isolation: isolate;
+  }
+  .board {
+    position: absolute;
+    inset: 0 0 16px 0;
+    z-index: 0;
+    border-radius: var(--radius);
+    border: 1px solid rgba(32, 34, 32, .12);
+    background: var(--board, #d8d8d3);
+    opacity: .7;
+    transform: translateY(6px);
+    transition: transform .3s ease-out, opacity .3s ease-out;
+    pointer-events: none;
+  }
+  .card {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    aspect-ratio: .7;
+    min-height: 460px;
+    padding: clamp(20px, 2.1vw, 27px);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--line);
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform .3s ease-out;
+    outline: none;
+  }
+  .card:focus-visible { outline: 2px solid var(--line); outline-offset: -7px; }
+  .field {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .card-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 34px;
+    padding-left: 48px;
+  }
+  .brand {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    opacity: .9;
+  }
+  .card-bottom {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(13px, 1.4vw, 17px);
+  }
+  .tagline {
+    margin: 0;
+    max-width: 100%;
+    font-size: var(--tagline-size, clamp(27px, 2.5vw, 37px));
+    line-height: 1.05;
+    letter-spacing: -.018em;
+    font-weight: 400;
+  }
+  .reveal {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--line);
+    font: inherit;
+    font-size: 13px;
+    letter-spacing: .01em;
+    cursor: pointer;
+    transition: background .2s ease-out, color .2s ease-out;
+  }
+  .reveal:hover { background: var(--line); color: var(--bg); }
+  .reveal:focus-visible { outline: 2px solid var(--line); outline-offset: 3px; }
+
+  /* Hover lift: transl(ate) only, placeholder height unchanged */
+  .plinth:focus-within .card { transform: translateY(-4px); }
+  .plinth:focus-within .board { transform: translateY(12px); opacity: 1; }
+  @media (hover: hover) {
+    .plinth:hover .card { transform: translateY(-4px); }
+    .plinth:hover .board { transform: translateY(12px); opacity: 1; }
+  }
+
+  /* Footer */
+  .colophon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px 28px;
+    margin-top: clamp(36px, 5.6vw, 74px);
+    padding: clamp(16px, 2.2vw, 22px) 0 clamp(30px, 4.4vw, 46px);
+    border-top: 1px solid var(--hair);
+    font-size: 12px;
+    letter-spacing: .02em;
+    color: var(--muted);
+  }
+  .colophon p { margin: 0; }
+
+  /* Source dialog */
+  .dialog {
+    width: min(720px, calc(100vw - 32px));
+    max-width: min(720px, calc(100vw - 32px));
+    padding: 0;
+    border: 1px solid var(--hair);
+    border-radius: var(--radius);
+    background: #fbfbf7;
+    color: var(--ink);
+  }
+  .dialog:not([open]) { display: none; }
+  .dialog::backdrop { background: rgba(20, 23, 20, .46); }
+  .dialog-inner {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 32px);
+    max-height: calc(100dvh - 32px);
+  }
+  .dialog-head {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: clamp(18px, 2.8vw, 28px) clamp(20px, 3vw, 30px) 0;
+  }
+  .dialog-kicker {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .dialog h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 3vw, 32px);
+    letter-spacing: -.01em;
+  }
+  .dialog-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 14px clamp(20px, 3vw, 30px) 4px;
+  }
+  .dialog-foot {
+    flex: 0 0 auto;
+    padding: 14px clamp(20px, 3vw, 30px) clamp(18px, 2.6vw, 26px);
+    border-top: 1px solid var(--hair);
+  }
+  .dialog-path {
+    margin: 0;
+    padding: 14px 15px;
+    border: 1px solid rgba(32, 34, 32, .1);
+    border-radius: 11px;
+    background: #eef0e9;
+    color: #2c312b;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    -webkit-user-select: all;
+    user-select: all;
+    tab-size: 2;
+  }
+  .dialog-facts {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0 0 0 18px;
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: #3c4139;
+    list-style: disc;
+  }
+  .dialog-facts:empty { display: none; }
+  .dialog-facts li { margin: 0; }
+  .dialog-close {
+    min-height: 44px;
+    padding: 0 20px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    background: var(--ink);
+    color: #fbfbf7;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .dialog-close:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+  /* Fallback note */
+  .unsupported {
+    width: min(680px, 100% - 32px);
+    margin: 10vh auto;
+    padding: 26px;
+    border: 1px solid var(--hair);
+    border-radius: var(--radius);
+    background: #fbfbf7;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .unsupported[hidden] { display: none; }
+  .unsupported h2 {
+    margin: 0 0 10px;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 26px;
+  }
+  .unsupported p { margin: 0; }
+
+  @media (max-width: 900px) {
+    .intro { grid-template-columns: minmax(0, 1fr); align-items: start; }
+    .lede { max-width: 54ch; }
+  }
+  @media (max-width: 650px) {
+    .plinth-row { grid-template-columns: minmax(0, 1fr); }
+    .card { min-height: 0; }
+    .tagline { font-size: min(var(--tagline-size, 32px), 7.6vw); }
+    .card { padding: 20px; }
+    .card-top { min-height: 32px; padding-left: 46px; }
+    .colophon { flex-direction: column; gap: 6px; }
+    .dialog-inner { max-height: calc(100vh - 24px); max-height: calc(100dvh - 24px); }
+    .dialog-head { padding: 16px 18px 0; }
+    .dialog-body { padding: 12px 18px 4px; }
+    .dialog-foot { padding: 12px 18px 16px; }
+  }
+
+
+  /* ===== site additions (hero CSS above is lifted verbatim) ===== */
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  .skip-link { position: absolute; left: -9999px; top: 0; z-index: 90; }
+  .skip-link:focus { left: 12px; top: 10px; background: var(--ink); color: var(--paper); padding: 10px 14px; border-radius: 4px; font-size: 12px; }
+
+  .site-nav { position: sticky; top: 0; z-index: 50; background: var(--paper); border-bottom: 1px solid var(--hair); }
+  .site-nav .shell { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 13px 0 11px; }
+  .nav-brand { margin: 0; font-size: 10.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; white-space: nowrap; }
+  .nav-brand span { color: var(--muted); font-weight: 400; letter-spacing: .1em; }
+  .nav-links { display: flex; flex-wrap: wrap; gap: clamp(11px, 1.9vw, 26px); margin: 0; padding: 0; list-style: none; }
+  .nav-links a { color: var(--ink); text-decoration: none; font-size: 11px; letter-spacing: .14em; padding: 5px 0; border-bottom: 1px solid transparent; }
+  .nav-links a:hover { border-bottom-color: var(--ink); }
+  .nav-links a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+  .section { border-top: 1px solid var(--hair); padding: clamp(52px, 6.6vw, 92px) 0; scroll-margin-top: 64px; }
+  .section-head { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: clamp(14px, 3vw, 48px); align-items: end; margin-bottom: clamp(26px, 3.6vw, 46px); }
+  .eyebrow { margin: 0; font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+  .section-title { margin: 10px 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 3.5vw, 46px); line-height: 1.06; letter-spacing: -.015em; }
+  .section-lede { margin: 0; max-width: 46ch; font-size: 15px; line-height: 1.7; color: #4c5149; }
+  .section-note { margin: 0 0 clamp(18px, 2.4vw, 28px); max-width: 62ch; font-size: 15px; line-height: 1.7; color: #4c5149; }
+  .section-aside { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+  .section-aside .section-lede { margin: 0; }
+  .section-decor { align-self: flex-end; display: flex; justify-content: flex-end; max-width: 100%; }
+  .section-decor canvas { display: block; width: clamp(160px, 16vw, 240px); height: 44px; opacity: .26; }
+
+  /* works */
+  .works { list-style: none; margin: 0; padding: 0; }
+  .work { display: grid; grid-template-columns: 3.2rem minmax(0, 1fr) 10rem; gap: clamp(12px, 2vw, 28px); padding: 26px 0 30px; border-top: 1px solid var(--hair); align-items: start; }
+  .work:last-child { border-bottom: 1px solid var(--hair); }
+  .work-no { font-size: 10.5px; letter-spacing: .14em; color: var(--muted); padding-top: .55em; font-variant-numeric: tabular-nums; }
+  .work-title { margin: 0; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.5; font-weight: 700; letter-spacing: -.005em; }
+  .work-meta-line { margin: 9px 0 0; max-width: 68ch; font-size: 12px; line-height: 1.7; color: var(--muted); letter-spacing: .01em; }
+  .work-text { margin: 13px 0 0; max-width: 68ch; font-size: 14.5px; line-height: 1.92; color: #2c312b; }
+  .work-note { margin: 14px 0 0; max-width: 68ch; padding: 2px 0 2px 13px; border-left: 1px solid var(--ink); font-size: 13px; line-height: 1.75; color: #4c5149; }
+  .work-links { margin: 13px 0 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; font-size: 12.5px; }
+  .work-links a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+  .work-links a:hover { border-bottom-width: 2px; }
+  .work-links a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .work-links-sep { color: var(--muted); opacity: .55; }
+  .work-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; padding-top: .25em; font-size: 12px; color: var(--muted); }
+  .tag { display: inline-block; border: 1px solid var(--hair); border-radius: 999px; padding: 3px 10px; font-size: 10.5px; letter-spacing: .05em; color: var(--ink); white-space: nowrap; }
+
+  /* photography */
+  .photo-grid { column-count: 3; column-gap: 19px; }
+  .photo { display: block; width: 100%; margin: 0 0 19px; padding: 0; border: 0; background: none; break-inside: avoid; page-break-inside: avoid; cursor: zoom-in; }
+  .photo img { display: block; width: 100%; height: auto; border-radius: 2px; }
+  .photo:hover img { opacity: .9; }
+  .photo:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+  @media (max-width: 960px) { .photo-grid { column-count: 2; } }
+  @media (max-width: 560px) { .photo-grid { column-count: 1; } }
+
+  /* experience */
+  .xp-list { list-style: none; margin: 0 0 0 6px; padding: 0 0 0 clamp(18px, 2.2vw, 32px); border-left: 1px solid var(--hair); }
+  .xp { position: relative; padding: 0 0 clamp(24px, 3vw, 38px); }
+  .xp:last-child { padding-bottom: 0; }
+  .xp::before { content: ""; position: absolute; left: calc(-1 * clamp(18px, 2.2vw, 32px) - 4px); top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--paper); border: 1px solid var(--ink); }
+  .xp-year { margin: 0; font-family: var(--serif); font-size: 15px; color: var(--muted); letter-spacing: .02em; }
+  .xp-title { margin: 5px 0 0; font-size: 16.5px; line-height: 1.45; font-weight: 700; }
+  .xp-sub { margin: 3px 0 0; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .xp-text { margin: 9px 0 0; max-width: 56ch; font-size: 13.5px; line-height: 1.7; color: #4c5149; }
+
+  /* honors */
+  .honors { list-style: none; margin: 0; padding: 0; }
+  .honor { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: clamp(10px, 2vw, 24px); padding: 17px 0 19px; border-top: 1px solid var(--hair); align-items: baseline; }
+  .honor:last-child { border-bottom: 1px solid var(--hair); }
+  .honor-year { font-size: 11px; letter-spacing: .1em; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .honor-title { margin: 0; font-size: 15.5px; line-height: 1.5; font-weight: 700; }
+  .honor-note { margin: 5px 0 0; font-size: 13px; line-height: 1.65; color: #4c5149; }
+
+  .contact-list { list-style: none; margin: 0; padding: 0; max-width: 640px; }
+  .contact-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 15px 0; border-top: 1px solid var(--hair); }
+  .contact-list li:last-child { border-bottom: 1px solid var(--hair); }
+  .contact-label { font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+  .contact-value { font-size: clamp(15px, 1.4vw, 17px); }
+  .contact-value a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hair); padding-bottom: 1px; }
+  .contact-value a:hover { border-bottom-color: var(--ink); }
+  .contact-value a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .contact-closing { margin: 26px 0 0; font-family: var(--serif); font-size: clamp(17px, 1.9vw, 22px); color: var(--ink); }
+
+  /* lightbox */
+  .lightbox { position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: clamp(14px, 3vw, 34px); background: rgba(10, 12, 10, .985); }
+  .lightbox[hidden] { display: none; }
+  .lb-stage { display: flex; align-items: center; justify-content: center; max-width: 100%; }
+  .lb-img { display: block; max-width: min(94vw, 1500px); max-height: 80vh; width: auto; height: auto; }
+  .lb-bar { display: flex; align-items: center; gap: 18px; color: #e8eae4; font-size: 12px; letter-spacing: .08em; flex-wrap: wrap; justify-content: center; }
+  .lb-btn { min-height: 44px; padding: 0 16px; border: 1px solid rgba(232, 234, 228, .42); border-radius: 999px; background: transparent; color: #e8eae4; font: inherit; font-size: 12px; letter-spacing: .08em; cursor: pointer; }
+  .lb-btn:hover { border-color: #e8eae4; }
+  .lb-btn:focus-visible { outline: 2px solid #f6f6f1; outline-offset: 3px; }
+  .lb-close { position: absolute; top: clamp(10px, 2vw, 22px); right: clamp(10px, 2vw, 22px); }
+  .lb-caption { color: #b9bdb3; min-width: 8ch; text-align: center; }
+
+  /* footer */
+  .site-foot { border-top: 1px solid var(--hair); padding: clamp(20px, 2.6vw, 30px) 0 clamp(34px, 4.6vw, 54px); font-size: 11px; letter-spacing: .08em; color: var(--muted); }
+  .site-foot .shell { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; }
+  .site-foot p { margin: 0; }
+  .site-foot a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--hair); }
+
+  @media (max-width: 900px) {
+    .section-head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+    .section-aside { align-items: flex-start; gap: 12px; }
+    .section-decor { align-self: flex-start; }
+    .work { grid-template-columns: 2.6rem minmax(0, 1fr); }
+    .work-meta { grid-column: 2; flex-direction: row; align-items: center; flex-wrap: wrap; gap: 10px 14px; padding-top: 4px; }
+    .about-grid { grid-template-columns: minmax(0, 1fr); }
+    .honor { grid-template-columns: 5rem minmax(0, 1fr); }
+  }
+  @media (max-width: 650px) {
+    .site-nav .shell { flex-direction: column; gap: 6px; }
+    .nav-links { gap: 10px 16px; }
+    .section { scroll-margin-top: 96px; }
+    .section-decor canvas { width: 132px; height: 34px; }
+    .photo { margin-bottom: 14px; }
+    .photo-grid { column-gap: 14px; }
+    .contact-list li { flex-direction: column; gap: 4px; }
+  }
+</style>
 </head>
 <body>
-
-  <!-- ===== 左侧固定竖栏 ===== -->
-  <aside class="rail" aria-hidden="true">
-    <span>Folio — 2026</span>
-    <span class="rail-mid">Kuang Ruijian</span>
-    <span>© 2026</span>
-  </aside>
-
-  <!-- ===== 页眉 ===== -->
-  <header class="masthead">
-    <div class="container masthead-inner">
-      <a class="brand" href="#hero">
-        <span class="brand-cn">匡锐健</span>
-        <span class="brand-en">Kuang Ruijian</span>
-      </a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#hero">封面</a>
-        <a href="#works">作品</a>
-        <a href="#photography">摄影</a>
-        <a href="#experience">经历</a>
-        <a href="#honors">荣誉</a>
-        <a href="#about">关于</a>
-        <a href="#contact">联系</a>
+  <a class="skip-link" href="#works">跳到内容</a>
+  <header class="site-nav">
+    <div class="shell">
+      <p class="nav-brand">KUANG RUIJIAN <span>· 匡锐健</span></p>
+      <nav aria-label="站内导航">
+        <ul class="nav-links">
+          <li><a href="#home">首页</a></li>
+          <li><a href="#works">作品</a></li>
+          <li><a href="#photo">摄影</a></li>
+          <li><a href="#experience">经历</a></li>
+          <li><a href="#honors">荣誉</a></li>
+          <li><a href="#contact">联系</a></li>
+        </ul>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="展开菜单">菜单</button>
     </div>
   </header>
-
-  <main>
-    <!-- ===== 封面 ===== -->
-    <section class="hero" id="hero">
-      <div class="container">
-        <div class="hero-toprow">
-          <span>Vol. 02 — 2026 <span class="dot">▲</span></span>
-          <span>武汉 · 华中科技大学</span>
-        </div>
-        <div class="hero-main">
-          <h1 class="hero-name">匡锐健</h1>
-          <div class="hero-en">
-            <span class="big">KUANG RUIJIAN</span>
-            <span class="yr">'26</span>
-          </div>
-        </div>
-        <div class="hero-tagline">
-          <p>
-            新闻传播本科生 · 新闻采写与评论 · 摄影师 · 文化活动策划<br />
-            相信文字与镜头都能抵达人心——<strong>让传播发生。</strong>
-          </p>
-          <span class="hero-scroll">Scroll <i>↓</i></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 作品精选 ===== -->
-    <section class="section works" id="works">
-      <div class="container">
-        <div class="chapter-head reveal">
-          <span class="ch">Chapter I</span>
-          <h2 class="zh">作品精选</h2>
-          <span class="en">Selected Works · No. 01—12</span>
-        </div>
-        <p class="section-lead reveal">
-          从新闻评论到深度报道，从 AIGC 影像到新媒体矩阵——每一项都是完整的「选题 → 制作 → 传播 → 复盘」实践链。我长期负责学院公众号的摄影工作。
-        </p>
-
-        <div class="work-list">
-          <article class="work-entry reveal">
-            <div class="work-no">No. 01</div>
-            <div class="work-body">
-              <h3>《再评祁连：没什么好委屈，补救遮掩不了错判》<a href="https://mp.weixin.qq.com/s/2GOHwMTH1j2Uz0FCnje7uA" target="_blank" rel="noopener" aria-label="阅读原文"><span class="arr">→</span></a></h3>
-              <p class="work-sub">新闻评论 · 曹林教授公众号「吐槽青年博士」· 2026-10-11 发布 · 署名「吐槽青年出品 匡锐健」</p>
-              <p class="work-desc">
-                评祁连县腾学生宿舍安置游客事件。围绕当地「补救已到位、不必再苛责」的说法，逐条追问：被腾出来的是学生宿舍、成本落到了谁身上、为什么应急选项里总先动学生。文章从县内可用公共空间、应急方案与成本分担三条线展开，梳理「谁的成本」这一判断标准。
-              </p>
-              <span class="award-line">推荐语 · 曹林：「有自己的背景调查视角」</span>
-              <div class="work-links">
-                <a href="https://mp.weixin.qq.com/s/2GOHwMTH1j2Uz0FCnje7uA" target="_blank" rel="noopener"><span>WeChat</span>阅读原文</a>
-              </div>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag tag--accent">新闻评论</span></div>
-            </div>
-          </article>
-
-          <article class="work-entry reveal">
-            <div class="work-no">No. 02</div>
-            <div class="work-body">
-              <h3>《山月记》AIGC 短片<a href="#works" aria-label="查看作品"><span class="arr">→</span></a></h3>
-              <p class="work-sub">14 分镜 · AI 生图 + AI 配音 + 人工剪辑 · 全流程独立完成</p>
-              <p class="work-desc">
-                从文学文本出发完成分镜设计，用 AI 工具生成视觉与声音，再以人工剪辑把控节奏与叙事。作品在技术与表达之间找到平衡，完成一次完整的「AI 辅助创作」实验。
-              </p>
-              <span class="award-line">Award · 「AIGC For Future」全球挑战赛 — 亚太区三等奖</span>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag tag--accent">AIGC 影像</span></div>
-            </div>
-          </article>
-
-          <article class="work-entry reveal">
-            <div class="work-no">No. 03</div>
-            <div class="work-body">
-              <h3>公众号「围坐闲谈」<a href="#works" aria-label="查看作品"><span class="arr">→</span></a></h3>
-              <p class="work-sub">主理人 · 独立运营 · 2026.05—09 已发布署名文章 6 篇</p>
-              <p class="work-desc">
-                从零运营的个人公众号：独立完成选题、撰稿、排版与数据复盘，策划「开卷」文化观察与「折角」影视评论两个栏目，以真诚表达连接同龄人。
-              </p>
-              <div class="work-nums">
-                <span class="num-badge"><b>6 篇</b>系列署名文章</span>
-                <span class="num-badge"><b>1万+</b>单篇最高阅读</span>
-              </div>
-              <div class="work-links">
-                <a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener"><span>WeChat</span>公众号「围坐闲谈」</a>
-              </div>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag tag--accent">新媒体运营</span></div>
-            </div>
-          </article>
-
-          <article class="work-entry reveal">
-            <div class="work-no">No. 04</div>
-            <div class="work-body">
-              <h3>「树下说」内容系列 · 多平台发布<a href="#works" aria-label="查看作品"><span class="arr">→</span></a></h3>
-              <p class="work-sub">抖音「树下说」 / B站「贝多树下说」 · 八苦系列已更新四集 · 单人完成全流程</p>
-              <p class="work-desc">
-                用故事和具体场景讲佛学概念，不讲经、不说教，3—5 分钟一集；已完成「三苦」「无常」「怨憎会」「爱别离」四集（脚本＋音频＋横竖双版本）。选题、脚本、画面、配音、剪辑与发布由我单人完成。
-              </p>
-              <div class="work-links">
-                <a href="https://www.douyin.com/" target="_blank" rel="noopener"><span>Douyin</span>「树下说」</a>
-                <a href="https://space.bilibili.com/" target="_blank" rel="noopener"><span>Bilibili</span>「贝多树下说」</a>
-              </div>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag tag--accent">视频创作</span></div>
-            </div>
-          </article>
-
-          <article class="work-entry reveal">
-            <div class="work-no">No. 05</div>
-            <div class="work-body">
-              <h3>《7年5轮诉讼、176位船民：一张"便条"引发的拉锯战 | 红星深度》<a href="#works" aria-label="查看作品"><span class="arr">→</span></a></h3>
-              <p class="work-sub">实习生署名 · 参与实地采访与素材收集 · 红星新闻深度频道 2026-04-10 刊发</p>
-              <p class="work-desc">
-                报道由红星新闻记者胡闲鹤采写，本人以实习生身份参与实地采访与素材收集，刊发后经腾讯新闻、上游新闻等多家转载。另外独立完成东湖游船收购纠纷、武汉纺织工人等现场采访。
-              </p>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag tag--accent">新闻采写</span></div>
-            </div>
-          </article>
-
-          <article class="work-entry reveal">
-            <div class="work-no">No. 06</div>
-            <div class="work-body">
-              <h3>特稿《褚志元》（采写中）</h3>
-              <p class="work-sub">新闻采写课特稿 · 2026.09—10 采写 · 独立采写 · 采访已完成，成稿中</p>
-              <p class="work-desc">
-                南昌起义首批女兵褚志元（1910—1940，江西高安人）人物特稿。独立完成史料考辨与采访提纲，电话采访高安党史地方志办与南昌八一起义纪念馆，并赴江西高安黄沙岗镇南山村走访褚氏族人与村中长者、赴南昌八一起义纪念馆实地采访。
-              </p>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag tag--accent">人物特稿</span></div>
-            </div>
-          </article>
-
-          <article class="work-entry reveal">
-            <div class="work-no">No. 07</div>
-            <div class="work-body">
-              <h3>「返家乡」红石榴宣讲实践<a href="#works" aria-label="查看作品"><span class="arr">→</span></a></h3>
-              <p class="work-sub">材料部组长 · 2026.01 — 2026.02</p>
-              <p class="work-desc">
-                统筹宣讲材料全链路：问卷设计与数据统计、案例筛选与内容整理，让宣讲既有依据也有温度。
-              </p>
-              <span class="award-line award-line--ink">获返家乡宣讲实习证明</span>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag">社会实践</span></div>
-            </div>
-          </article>
-
-          <article class="work-entry reveal">
-            <div class="work-no">No. 08</div>
-            <div class="work-body">
-              <h3>原创 AI 歌曲《铅字山河》<a href="#works" aria-label="查看作品"><span class="arr">→</span></a></h3>
-              <p class="work-sub">歌词 + 编曲构思 · AI 音乐辅助创作 · 合作署名：吴润泽、匡锐健</p>
-              <p class="work-desc">
-                以「铅字」意象致敬新闻与出版，用新工具表达老主题——创作本身就是一场与传统对话的尝试。
-              </p>
-              <span class="award-line">Award · 「党报里的中国」原创 AI 歌曲 — 三等奖</span>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag tag--accent">AI 创作</span></div>
-            </div>
-          </article>
-
-          <article class="work-entry reveal">
-            <div class="work-no">No. 09</div>
-            <div class="work-body">
-              <h3>英语短片《The Hot-Dry Noodle Index》</h3>
-              <p class="work-sub">2026「外研社 · 国才杯」英语组短视频赛项（主题「数说中国」）· 2026-10-08 定稿 · 团队作品 · 本人担任剪辑</p>
-              <p class="work-desc">
-                以一碗热干面 50 年的价格史与购买力反转，呈现中国发展变迁。约 3 分钟、中英双语字幕；脚本由团队共同打磨、旁白为团队成员英语配音，本人负责全片剪辑、节奏与字幕包装。
-              </p>
-              <span class="award-line">Award · 「外研社 · 国才杯」短视频赛项 湖北省决赛 — 铜奖（2026-10-25）</span>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag tag--accent">视频剪辑</span></div>
-            </div>
-          </article>
-
-          <article class="work-entry reveal">
-            <div class="work-no">No. 10</div>
-            <div class="work-body">
-              <h3>《从书架到货架！湖北高校 57 项优质成果“打包”寻对接》<a href="https://www.ctdsb.net/c1673_202610/2880930.html" target="_blank" rel="noopener" aria-label="阅读原文"><span class="arr">→</span></a></h3>
-              <p class="work-sub">视频报道 · 极目新闻（湖北日报传媒集团）· 2026-10-16 发布 · 本人负责撰稿与现场拍摄</p>
-              <p class="work-desc">
-                报道湖北高校 57 项优质成果集中“打包”寻找对接的现场。本人承担稿件撰写与现场拍摄，稿件经带教老师李碗容修改后发布；网页版署名为「极目新闻记者 李碗容 / 实习生 谢天荩 匡锐健 / 通讯员 姜胜来」。
-              </p>
-              <div class="work-links">
-                <a href="https://www.ctdsb.net/c1673_202610/2880930.html" target="_blank" rel="noopener"><span>Jimu</span>阅读原文</a>
-              </div>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag tag--accent">视频报道</span></div>
-            </div>
-          </article>
-
-          <article class="work-entry reveal">
-            <div class="work-no">No. 11</div>
-            <div class="work-body">
-              <h3>极目新闻「极目育见」视频号 · 短视频 5 条</h3>
-              <p class="work-sub">极目新闻「极目育见」视频号 · 2026-09 至 2026-10 · 本人制作 · 署名「实习生 匡锐健」等</p>
-              <p class="work-desc">
-                为极目新闻「极目育见」视频号制作 5 条短视频：《来听华科学子唱歌！一首首歌曲带你重回青春校园》（华中科技大学青春歌会，10-18 武汉，24 秒）；《“科技红娘”让技术走出实验室！楚才汇智·高校科技成果转化对接专场》（活动 10-15，报道 10-16 发布，15 秒）；《湖北艾灸火出圈，飞行 24 小时的疲惫被一枚眼罩缓解》（世界技能大赛·湖北蕲艾，2026-09-25 发布，19 秒）；《华科大校合唱团快闪亮相教学楼》（华中科技大学校合唱团秋日快闪，10-23 武汉，28 秒）；《杨叔子全集》编纂出版启动（华中科技大学，10-28 武汉，29 秒）。后两条署名「极目新闻实习生 匡锐健 朱若君 谢天荩」。
-              </p>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag tag--accent">短视频</span></div>
-            </div>
-          </article>
-
-          <article class="work-entry reveal">
-            <div class="work-no">No. 12</div>
-            <div class="work-body">
-              <h3>《读懂先生，读懂华科大：〈杨叔子全集〉编纂启动，六卷十七本预计明年出版》<a href="https://www.ctdsb.net/c1673_202610/2890641.html" target="_blank" rel="noopener" aria-label="阅读原文"><span class="arr">→</span></a></h3>
-              <p class="work-sub">报道 · 极目新闻（湖北日报传媒集团）· 2026-10-28 发布 · 本人负责撰稿</p>
-              <p class="work-desc">
-                报道中国科学院院士、原华中理工大学校长杨叔子先生的《杨叔子全集》编纂出版启动会（2026-10-28，华中科技大学），六卷十七本预计明年出版。本人承担稿件撰写；署名为「极目新闻记者 李碗容 / 实习生 谢天荩 朱若君 匡锐健 / 通讯员 黄双子」。
-              </p>
-              <div class="work-links">
-                <a href="https://www.ctdsb.net/c1673_202610/2890641.html" target="_blank" rel="noopener"><span>Jimu</span>阅读原文</a>
-              </div>
-            </div>
-            <div class="work-right">
-              <div class="tag-row"><span class="tag tag--accent">报道</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 摄影专辑（三列轮播） ===== -->
-    <section class="section photos" id="photography">
-      <div class="container">
-        <div class="chapter-head reveal">
-          <span class="ch">Chapter II</span>
-          <h2 class="zh">摄影专辑</h2>
-          <span class="en">Photography · Lens KRJ</span>
-        </div>
-        <div class="ph-intro reveal">
-          <p>
-            按下快门，把瞬间留成永恒。从街头巷尾到夜幕下的东湖——
-            <strong>摄影是我观察世界、记录时代的方式</strong>，也是新闻传播专业的基本功。
-            累计参与 41 场次校园新闻摄影、覆盖 27 项活动，产出原图约 4027 张、视频 367 段；多篇图片被学院官方公众号采用。
-          </p>
-          <span class="ph-count" id="phCount"></span>
-        </div>
-        <div id="phBlocks"></div>
-      </div>
-    </section>
-
-    <!-- ===== 灯箱 ===== -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-label="照片预览">
-      <button class="lb-btn lb-close" id="lbClose" aria-label="关闭">✕</button>
-      <button class="lb-btn lb-prev" id="lbPrev" aria-label="上一张">‹</button>
-      <button class="lb-btn lb-next" id="lbNext" aria-label="下一张">›</button>
-      <figure>
-        <img id="lbImg" src="" alt="" />
-        <figcaption class="lightbox-cap">
-          <b id="lbTitle"></b>
-          <span id="lbMeta"></span>
-        </figcaption>
-      </figure>
-      <div class="lb-counter" id="lbCounter"></div>
+  <section class="hero" id="home">
+    <div class="shell">
+<header class="masthead">
+    <p class="kicker">KRJ <span class="slash">/</span> Visual studies</p>
+    <div class="controls">
+      <p class="status" id="status" aria-live="polite">Motion running</p>
+      <button class="switch" id="motion-switch" type="button" aria-pressed="true">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Motion</span>
+      </button>
     </div>
+  </header>
+<section class="intro">
+      <h1 class="title">Identity, in lines.</h1>
+      <p class="lede">Move through a familiar mark. Find the structure beneath the surface.</p>
+    </section>
+<section aria-label="Line studies">
+      <ul class="plinth-row" id="cards">
+        <li class="plinth" data-brand="record">
+          <div class="board" aria-hidden="true"></div>
+          <article class="card" tabindex="0" aria-label="记录 / Record &mdash; For the ones who aren't heard. Reveal the source." style="--bg:#eeeeeb;--line:#202220;--detect:#267dff;--tagline-size:34px">
+            <canvas class="field" aria-hidden="true"></canvas>
+            <div class="card-top"><p class="brand">记录 / Record</p></div>
+            <div class="card-bottom">
+              <p class="tagline">For the ones who aren't heard.</p>
+              <button class="reveal" type="button">Reveal the source &rarr;</button>
+            </div>
+          </article>
+        </li>
+        <li class="plinth" data-brand="create">
+          <div class="board" aria-hidden="true"></div>
+          <article class="card" tabindex="0" aria-label="创作 / Create &mdash; Old subjects, new tools. Reveal the source." style="--bg:#1b3a8c;--line:#c2dcff;--detect:#91dcff;--tagline-size:30px">
+            <canvas class="field" aria-hidden="true"></canvas>
+            <div class="card-top"><p class="brand">创作 / Create</p></div>
+            <div class="card-bottom">
+              <p class="tagline">Old subjects, new tools.</p>
+              <button class="reveal" type="button">Reveal the source &rarr;</button>
+            </div>
+          </article>
+        </li>
+        <li class="plinth" data-brand="organize">
+          <div class="board" aria-hidden="true"></div>
+          <article class="card" tabindex="0" aria-label="组织 / Organize &mdash; Done on paper isn't done on the ground. Reveal the source." style="--bg:#101512;--line:#e3c98f;--detect:#4eaeff;--tagline-size:27px">
+            <canvas class="field" aria-hidden="true"></canvas>
+            <div class="card-top"><p class="brand">组织 / Organize</p></div>
+            <div class="card-bottom">
+              <p class="tagline">Done on paper isn't done on the ground.</p>
+              <button class="reveal" type="button">Reveal the source &rarr;</button>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </section>
+<footer class="colophon">
+    <p>A study of recognition and reconstruction.</p>
+    <p>One path. A field of light. Four line weights.</p>
+  </footer>
+    </div>
+  </section>
+  <main class="site-main">
+    <section class="section" id="works">
+      <div class="shell">
+        <header class="section-head">
+          <div class="section-heading">
+            <p class="eyebrow">Selected Works</p>
+            <h2 class="section-title">作品</h2>
+          </div>
+          <div class="section-aside">
+            <div class="section-decor" data-shape="frame" aria-hidden="true"><canvas aria-hidden="true"></canvas></div>
+          </div>
+        </header>
+        <ol class="works">
+          <li class="work">
+            <span class="work-no">01</span>
+            <div class="work-body">
+              <h3 class="work-title">《再评祁连：没什么好委屈，补救遮掩不了错判》</h3>
+              <p class="work-meta-line">曹林教授公众号「吐槽青年博士」· 2026-10-11 发布 · 署名「吐槽青年出品 匡锐健」</p>
+              <p class="work-text">评祁连县腾学生宿舍安置游客事件。围绕当地「补救已到位、不必再苛责」的说法，逐条追问：被腾出来的是学生宿舍、成本落到了谁身上、为什么应急选项里总先动学生。文章从县内可用公共空间、应急方案与成本分担三条线展开，梳理「谁的成本」这一判断标准。</p>
+              <p class="work-note">推荐语 · 曹林：「有自己的背景调查视角」</p>
+              <p class="work-links"><a href="https://mp.weixin.qq.com/s/2GOHwMTH1j2Uz0FCnje7uA" target="_blank" rel="noopener noreferrer">WeChat 阅读原文 ↗</a></p>
+            </div>
+            <div class="work-meta">
+              <span class="tag">新闻评论</span>
+              <time>2026-10-11</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">02</span>
+            <div class="work-body">
+              <h3 class="work-title">《山月记》AIGC 短片</h3>
+              <p class="work-meta-line">14 分镜 · AI 生图 + AI 配音 + 人工剪辑 · 全流程独立完成</p>
+              <p class="work-text">从文学文本出发完成分镜设计，用 AI 工具生成视觉与声音，再以人工剪辑把控节奏与叙事。作品在技术与表达之间找到平衡，完成一次完整的「AI 辅助创作」实验。</p>
+              <p class="work-note">Award · 「AIGC For Future」全球挑战赛 — 亚太区三等奖</p>
+              
+            </div>
+            <div class="work-meta">
+              <span class="tag">AIGC 影像</span>
+              <time>—</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">03</span>
+            <div class="work-body">
+              <h3 class="work-title">公众号「围坐闲谈」</h3>
+              <p class="work-meta-line">主理人 · 独立运营 · 2026.05—09 已发布署名文章 6 篇</p>
+              <p class="work-text">从零运营的个人公众号：独立完成选题、撰稿、排版与数据复盘，策划「开卷」文化观察与「折角」影视评论两个栏目，以真诚表达连接同龄人。</p>
+              <p class="work-note">6 篇系列署名文章 · 1万+ 单篇最高阅读</p>
+              <p class="work-links"><a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener noreferrer">WeChat 公众号「围坐闲谈」 ↗</a></p>
+            </div>
+            <div class="work-meta">
+              <span class="tag">新媒体运营</span>
+              <time>2026.05—09</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">04</span>
+            <div class="work-body">
+              <h3 class="work-title">「树下说」内容系列 · 多平台发布</h3>
+              <p class="work-meta-line">抖音「树下说」/ B站「贝多树下说」· 八苦系列已更新四集 · 单人完成全流程</p>
+              <p class="work-text">用故事和具体场景讲佛学概念，不讲经、不说教，3—5 分钟一集；已完成「三苦」「无常」「怨憎会」「爱别离」四集（脚本＋音频＋横竖双版本）。选题、脚本、画面、配音、剪辑与发布由我单人完成。</p>
+              
+              <p class="work-links"><a href="https://www.douyin.com/" target="_blank" rel="noopener noreferrer">Douyin「树下说」 ↗</a><span class="work-links-sep" aria-hidden="true">·</span><a href="https://space.bilibili.com/" target="_blank" rel="noopener noreferrer">Bilibili「贝多树下说」 ↗</a></p>
+            </div>
+            <div class="work-meta">
+              <span class="tag">视频创作</span>
+              <time>—</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">05</span>
+            <div class="work-body">
+              <h3 class="work-title">《7年5轮诉讼、176位船民：一张“便条”引发的拉锯战 | 红星深度》</h3>
+              <p class="work-meta-line">实习生署名 · 参与实地采访与素材收集 · 红星新闻深度频道 2026-04-10 刊发</p>
+              <p class="work-text">报道由红星新闻记者胡闲鹤采写，本人以实习生身份参与实地采访与素材收集，刊发后经腾讯新闻、上游新闻等多家转载。另外独立完成东湖游船收购纠纷、武汉纺织工人等现场采访。</p>
+              
+              
+            </div>
+            <div class="work-meta">
+              <span class="tag">新闻采写</span>
+              <time>2026-04-10</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">06</span>
+            <div class="work-body">
+              <h3 class="work-title">特稿《褚志元》（采写中）</h3>
+              <p class="work-meta-line">新闻采写课特稿 · 2026.09—10 采写 · 独立采写 · 采访已完成，成稿中</p>
+              <p class="work-text">南昌起义首批女兵褚志元（1910—1940，江西高安人）人物特稿。独立完成史料考辨与采访提纲，电话采访高安党史地方志办与南昌八一起义纪念馆，并赴江西高安黄沙岗镇南山村走访褚氏族人与村中长者、赴南昌八一起义纪念馆实地采访。</p>
+              
+              
+            </div>
+            <div class="work-meta">
+              <span class="tag">人物特稿</span>
+              <time>2026.09—10</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">07</span>
+            <div class="work-body">
+              <h3 class="work-title">「返家乡」红石榴宣讲实践</h3>
+              <p class="work-meta-line">材料部组长 · 2026.01 — 2026.02</p>
+              <p class="work-text">统筹宣讲材料全链路：问卷设计与数据统计、案例筛选与内容整理，让宣讲既有依据也有温度。</p>
+              <p class="work-note">获返家乡宣讲实习证明</p>
+              
+            </div>
+            <div class="work-meta">
+              <span class="tag">社会实践</span>
+              <time>2026.01—02</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">08</span>
+            <div class="work-body">
+              <h3 class="work-title">原创 AI 歌曲《铅字山河》</h3>
+              <p class="work-meta-line">歌词 + 编曲构思 · AI 音乐辅助创作 · 合作署名：吴润泽、匡锐健</p>
+              <p class="work-text">以「铅字」意象致敬新闻与出版，用新工具表达老主题——创作本身就是一场与传统对话的尝试。</p>
+              <p class="work-note">Award · 「党报里的中国」原创 AI 歌曲 — 三等奖</p>
+              
+            </div>
+            <div class="work-meta">
+              <span class="tag">AI 创作</span>
+              <time>—</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">09</span>
+            <div class="work-body">
+              <h3 class="work-title">英语短片《The Hot-Dry Noodle Index》</h3>
+              <p class="work-meta-line">2026「外研社 · 国才杯」英语组短视频赛项（主题「数说中国」）· 2026-10-08 定稿 · 团队作品 · 本人担任剪辑</p>
+              <p class="work-text">以一碗热干面 50 年的价格史与购买力反转，呈现中国发展变迁。约 3 分钟、中英双语字幕；脚本由团队共同打磨、旁白为团队成员英语配音，本人负责全片剪辑、节奏与字幕包装。</p>
+              <p class="work-note">Award · 「外研社 · 国才杯」短视频赛项 湖北省决赛 — 铜奖（2026-10-25）</p>
+              
+            </div>
+            <div class="work-meta">
+              <span class="tag">视频剪辑</span>
+              <time>2026-10-08</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">10</span>
+            <div class="work-body">
+              <h3 class="work-title">《从书架到货架！湖北高校 57 项优质成果“打包”寻对接》</h3>
+              <p class="work-meta-line">极目新闻（湖北日报传媒集团）· 2026-10-16 发布 · 本人负责撰稿与现场拍摄</p>
+              <p class="work-text">报道湖北高校 57 项优质成果集中“打包”寻找对接的现场。本人承担稿件撰写与现场拍摄，稿件经带教老师李碗容修改后发布；网页版署名为「极目新闻记者 李碗容 / 实习生 谢天荩 匡锐健 / 通讯员 姜胜来」。</p>
+              
+              <p class="work-links"><a href="https://www.ctdsb.net/c1673_202610/2880930.html" target="_blank" rel="noopener noreferrer">极目阅读原文 ↗</a></p>
+            </div>
+            <div class="work-meta">
+              <span class="tag">视频报道</span>
+              <time>2026-10-16</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">11</span>
+            <div class="work-body">
+              <h3 class="work-title">极目新闻「极目育见」视频号 · 短视频 5 条</h3>
+              <p class="work-meta-line">极目新闻「极目育见」视频号 · 2026-09 至 2026-10 · 本人制作 · 署名「实习生 匡锐健」等</p>
+              <p class="work-text">为极目新闻「极目育见」视频号制作 5 条短视频：《来听华科学子唱歌！一首首歌曲带你重回青春校园》（华中科技大学青春歌会，10-18 武汉，24 秒）；《“科技红娘”让技术走出实验室！楚才汇智·高校科技成果转化对接专场》（活动 10-15，报道 10-16 发布，15 秒）；《湖北艾灸火出圈，飞行 24 小时的疲惫被一枚眼罩缓解》（世界技能大赛·湖北蕲艾，2026-09-25 发布，19 秒）；《华科大校合唱团快闪亮相教学楼》（华中科技大学校合唱团秋日快闪，10-23 武汉，28 秒）；《杨叔子全集》编纂出版启动（华中科技大学，10-28 武汉，29 秒）。后两条署名「极目新闻实习生 匡锐健 朱若君 谢天荩」。</p>
+              
+              
+            </div>
+            <div class="work-meta">
+              <span class="tag">短视频</span>
+              <time>2026-09—10</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">12</span>
+            <div class="work-body">
+              <h3 class="work-title">《读懂先生，读懂华科大：〈杨叔子全集〉编纂启动，六卷十七本预计明年出版》</h3>
+              <p class="work-meta-line">极目新闻（湖北日报传媒集团）· 2026-10-28 发布 · 本人负责撰稿</p>
+              <p class="work-text">报道中国科学院院士、原华中理工大学校长杨叔子先生的《杨叔子全集》编纂出版启动会（2026-10-28，华中科技大学），六卷十七本预计明年出版。本人承担稿件撰写；署名为「极目新闻记者 李碗容 / 实习生 谢天荩 朱若君 匡锐健 / 通讯员 黄双子」。</p>
+              
+              <p class="work-links"><a href="https://www.ctdsb.net/c1673_202610/2890641.html" target="_blank" rel="noopener noreferrer">极目阅读原文 ↗</a></p>
+            </div>
+            <div class="work-meta">
+              <span class="tag">报道</span>
+              <time>2026-10-28</time>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-    <!-- ===== 经历 ===== -->
+    <section class="section" id="photo">
+      <div class="shell">
+        <header class="section-head">
+          <div class="section-heading">
+            <p class="eyebrow">Photography</p>
+            <h2 class="section-title">摄影</h2>
+          </div>
+          <div class="section-aside">
+            <div class="section-decor" data-shape="ring" aria-hidden="true"><canvas aria-hidden="true"></canvas></div>
+          </div>
+        </header>
+        <p class="section-note">41 场次校园新闻摄影，约 4027 张原图；这里留下十二张。</p>
+        <div class="photo-grid">
+          <button class="photo" type="button" data-full="assets/photos/street-01.webp" data-caption="street 01" aria-label="查看大图：street 01">
+            <img src="assets/photos/street-01-800.webp" width="800" height="534" loading="lazy" decoding="async" alt="street 01">
+          </button>
+          <button class="photo" type="button" data-full="assets/photos/life-01.webp" data-caption="life 01" aria-label="查看大图：life 01">
+            <img src="assets/photos/life-01-800.webp" width="800" height="534" loading="lazy" decoding="async" alt="life 01">
+          </button>
+          <button class="photo" type="button" data-full="assets/photos/night-01.webp" data-caption="night 01" aria-label="查看大图：night 01">
+            <img src="assets/photos/night-01-800.webp" width="534" height="800" loading="lazy" decoding="async" alt="night 01">
+          </button>
+          <button class="photo" type="button" data-full="assets/photos/stage-01.webp" data-caption="stage 01" aria-label="查看大图：stage 01">
+            <img src="assets/photos/stage-01-800.webp" width="800" height="534" loading="lazy" decoding="async" alt="stage 01">
+          </button>
+          <button class="photo" type="button" data-full="assets/photos/street-02.webp" data-caption="street 02" aria-label="查看大图：street 02">
+            <img src="assets/photos/street-02-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="street 02">
+          </button>
+          <button class="photo" type="button" data-full="assets/photos/life-02.webp" data-caption="life 02" aria-label="查看大图：life 02">
+            <img src="assets/photos/life-02-800.webp" width="800" height="534" loading="lazy" decoding="async" alt="life 02">
+          </button>
+          <button class="photo" type="button" data-full="assets/photos/stage-02.webp" data-caption="stage 02" aria-label="查看大图：stage 02">
+            <img src="assets/photos/stage-02-800.webp" width="800" height="534" loading="lazy" decoding="async" alt="stage 02">
+          </button>
+          <button class="photo" type="button" data-full="assets/photos/street-03.webp" data-caption="street 03" aria-label="查看大图：street 03">
+            <img src="assets/photos/street-03-800.webp" width="534" height="800" loading="lazy" decoding="async" alt="street 03">
+          </button>
+          <button class="photo" type="button" data-full="assets/photos/stage-03.webp" data-caption="stage 03" aria-label="查看大图：stage 03">
+            <img src="assets/photos/stage-03-800.webp" width="534" height="800" loading="lazy" decoding="async" alt="stage 03">
+          </button>
+          <button class="photo" type="button" data-full="assets/photos/night-02.webp" data-caption="night 02" aria-label="查看大图：night 02">
+            <img src="assets/photos/night-02-800.webp" width="800" height="534" loading="lazy" decoding="async" alt="night 02">
+          </button>
+          <button class="photo" type="button" data-full="assets/photos/street-04.webp" data-caption="street 04" aria-label="查看大图：street 04">
+            <img src="assets/photos/street-04-800.webp" width="800" height="534" loading="lazy" decoding="async" alt="street 04">
+          </button>
+          <button class="photo" type="button" data-full="assets/photos/street-05.webp" data-caption="street 05" aria-label="查看大图：street 05">
+            <img src="assets/photos/street-05-800.webp" width="800" height="513" loading="lazy" decoding="async" alt="street 05">
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="experience">
-      <div class="container">
-        <div class="chapter-head reveal">
-          <span class="ch">Chapter III</span>
-          <h2 class="zh">经历</h2>
-          <span class="en">Experience · Journey</span>
-        </div>
-
-        <p class="section-lead reveal">从新闻采写到文化策划，从校园摄影到政务见习——把每一段经历都做成可交付的成果。</p>
-
-        <div class="exp-list">
-          <div class="tl-item reveal">
-            <div class="tl-side">2025.09 — 2029.06</div>
-            <div class="tl-main">
-              <h3>华中科技大学 <span class="role">985 / 双一流</span></h3>
-              <p class="work-sub" style="margin-top:4px">新闻与信息传播学院 · 广播电视学 · 本科在读</p>
-              <p class="work-desc">2026.06 分流至视听传播系；专业排名 7/33。主修新闻传播核心课程，活跃于校媒采写、校园摄影与学院文化建设。</p>
-            </div>
+      <div class="shell">
+        <header class="section-head">
+          <div class="section-heading">
+            <p class="eyebrow">Experience</p>
+            <h2 class="section-title">经历</h2>
           </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-side">2026.09 — 至今</div>
-            <div class="tl-main">
-              <h3>极目新闻（湖北日报传媒集团） <span class="role">新闻实习生</span></h3>
-              <ul>
-                <li>承担选题策划与视频剪辑任务，参与日常新闻内容生产</li>
-                <li>2026-10-16 发布视频报道《从书架到货架！湖北高校 57 项优质成果“打包”寻对接》：负责稿件撰写与现场拍摄（带教老师李碗容参与稿件修改）</li>
-                <li>为「极目育见」视频号制作短视频 5 条（华中科技大学青春歌会、楚才汇智·高校科技成果转化对接专场、世界技能大赛湖北蕲艾、华科大校合唱团快闪、《杨叔子全集》编纂出版启动），署名「实习生 匡锐健」等</li>
-                <li>2026-10-28 发布报道《读懂先生，读懂华科大：〈杨叔子全集〉编纂启动，六卷十七本预计明年出版》：负责撰稿（署名「实习生 谢天荩 朱若君 匡锐健」）</li>
-              </ul>
-            </div>
+          <div class="section-aside">
+            <div class="section-decor" data-shape="steps" aria-hidden="true"><canvas aria-hidden="true"></canvas></div>
           </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-side">2026.07 — 2026.08</div>
-            <div class="tl-main">
-              <h3>湘潭县易俗河镇人民政府 <span class="role">党政办公室 · 实习生</span></h3>
-              <ul>
-                <li>参与公文处理与会议材料撰写，配合镇村对接完成材料收集与汇总</li>
-                <li>协助会务组织与文件归档，熟悉基层政务工作流程</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-side">2026.01 — 2026.02</div>
-            <div class="tl-main">
-              <h3>湘潭市雨湖区委巡察办公室 <span class="role">政务见习生</span></h3>
-              <ul>
-                <li>参与巡察文件与整改材料整理、会议材料撰写与问题线索表格汇总</li>
-                <li>学习政务信息报送规范，独立撰写见习总结报告</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-side">2026.04 — 2026.05</div>
-            <div class="tl-main">
-              <h3>卓越新传人才 AI 实训营 <span class="role">结业 · 优秀小组</span></h3>
-              <p class="work-sub" style="margin-top:4px">华中科技大学新闻与信息传播学院 × 武汉秋叶教育科技有限公司 联合组织</p>
-              <ul>
-                <li>2026.04.19–05.17 参加实训并结业，取得结业证书</li>
-                <li>所在「第一小组」（组长吴润泽）圆满完成各项任务、表现优异，获评「优秀小组」，有荣誉证书</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-side">2025 — 至今</div>
-            <div class="tl-main">
-              <h3>校园经历 <span class="role">学生工作 · 校媒 · 志愿</span></h3>
-              <ul>
-                <li>校团委组织部（获「月度之星」）：任招新签到引导组组长，策划欢送会并设计签到墙，组织入党积极分子推荐会</li>
-                <li>学生社区工作中心 · 文化建设部副部长（2026.05 任职公示）：筹备期牵头编写部门职责说明、品牌活动管理条例、招新面试题库与面试方案，并完成「楼下客厅」社区沙龙、「周末放映室」社区观影、「节气有声」社区微活动三项品牌活动策划（方案已成文，活动尚待落地）；负责学院学生社区文化活动策划与宣传物料设计</li>
-                <li>校级媒体组织（2026.10 起）：华中科技大学电视台（宣传部）成员；学工处学生新闻中心 · 文化中心 成员；冰岩作坊（校级互联网创新学生团队）宣传组成员</li>
-                <li>军训办公室宣传组（2026.09，承担军训期间宣传工作与摄影任务）</li>
-                <li>新闻传播学类 2501 班团支书：策划组织团日活动与班级外出全流程</li>
-                <li>梦翔支教队成员：2026 暑期宣恩支教与敬老服务；武汉马拉松志愿者；计算机学院公众号记者</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        </header>
+        <ol class="xp-list">
+          <li class="xp">
+            <p class="xp-year">2025.09—2029.06</p>
+            <h3 class="xp-title">华中科技大学 新闻与信息传播学院 · 广播电视学</h3>
+            <p class="xp-sub">本科在读</p>
+            <p class="xp-text">广播电视学在读，2026.06 分流至视听传播系，专业排名 7/33。</p>
+          </li>
+          <li class="xp">
+            <p class="xp-year">2025.09—</p>
+            <h3 class="xp-title">校园：校团委组织部 · 学生社区工作中心文化建设部 · 华中科技大学电视台</h3>
+            <p class="xp-sub">学生工作</p>
+            <p class="xp-text">校团委组织部、学生社区文化建设部、校媒与梦翔支教队。</p>
+          </li>
+          <li class="xp">
+            <p class="xp-year">2026.01—02</p>
+            <h3 class="xp-title">湘潭市雨湖区委巡察办公室</h3>
+            <p class="xp-sub">政务见习生</p>
+            <p class="xp-text">巡察文件与整改材料整理，会议材料撰写，问题线索表格汇总。</p>
+          </li>
+          <li class="xp">
+            <p class="xp-year">2026.04—05</p>
+            <h3 class="xp-title">卓越新传人才 AI 实训营</h3>
+            <p class="xp-sub">结业 · 优秀小组</p>
+            <p class="xp-text">新闻与信息传播学院 × 武汉秋叶教育科技有限公司联合组织；2026.04.19—05.17 参训并结业，所在第一小组获评「优秀小组」。</p>
+          </li>
+          <li class="xp">
+            <p class="xp-year">2026.07—08</p>
+            <h3 class="xp-title">湘潭县易俗河镇人民政府 · 党政办公室</h3>
+            <p class="xp-sub">实习生</p>
+            <p class="xp-text">公文、会议材料、会务与归档——基层政务的日常。</p>
+          </li>
+          <li class="xp">
+            <p class="xp-year">2026.09—</p>
+            <h3 class="xp-title">极目新闻（湖北日报传媒集团）</h3>
+            <p class="xp-sub">新闻实习生</p>
+            <p class="xp-text">选题策划与视频剪辑；五条短视频、两篇署名报道。</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- ===== 荣誉 ===== -->
-    <section class="section honors" id="honors">
-      <div class="container">
-        <div class="chapter-head reveal">
-          <span class="ch">Chapter IV</span>
-          <h2 class="zh">荣誉</h2>
-          <span class="en">Honors · Recognition</span>
-        </div>
-        <div class="honor-list reveal">
-          <div class="honor-row">
-            <div class="medal">◆ ◆</div>
-            <h4>「AIGC For Future」全球挑战赛 · 亚太区三等奖</h4>
-            <p>《山月记》AIGC 短片</p>
+    <section class="section" id="honors">
+      <div class="shell">
+        <header class="section-head">
+          <div class="section-heading">
+            <p class="eyebrow">Honors</p>
+            <h2 class="section-title">荣誉</h2>
           </div>
-          <div class="honor-row">
-            <div class="medal">◆ ◆</div>
-            <h4>「党报里的中国」原创 AI 歌曲三等奖</h4>
-            <p>《铅字山河》</p>
+          <div class="section-aside">
+            <div class="section-decor" data-shape="diamond" aria-hidden="true"><canvas aria-hidden="true"></canvas></div>
           </div>
-          <div class="honor-row">
-            <div class="medal">◆ ◆</div>
-            <h4>「外研社 · 国才杯」全国大学生外语能力大赛 · 短视频赛项</h4>
-            <p>湖北省决赛 铜奖 ·《The Hot-Dry Noodle Index》· 2026</p>
-          </div>
-          <div class="honor-row">
-            <div class="medal">◆ ◆</div>
-            <h4>校优秀学生干部奖学金 / 自强奋进奖学金</h4>
-            <p>华中科技大学 · 2026</p>
-          </div>
-          <div class="honor-row">
-            <div class="medal">◆ ◆</div>
-            <h4>2025 年度优秀共青团员 · 校团委组织部「月度之星」</h4>
-            <p>华中科技大学 · 2025—2026</p>
-          </div>
-        </div>
+        </header>
+        <ul class="honors">
+          <li class="honor">
+            <span class="honor-year">2026</span>
+            <div>
+              <h3 class="honor-title">「AIGC For Future」全球挑战赛 · 亚太区三等奖</h3>
+              <p class="honor-note">《山月记》AIGC 短片</p>
+            </div>
+          </li>
+          <li class="honor">
+            <span class="honor-year">2026</span>
+            <div>
+              <h3 class="honor-title">「党报里的中国」原创 AI 歌曲 三等奖</h3>
+              <p class="honor-note">《铅字山河》，合作署名：吴润泽、匡锐健</p>
+            </div>
+          </li>
+          <li class="honor">
+            <span class="honor-year">2026</span>
+            <div>
+              <h3 class="honor-title">「外研社·国才杯」英语组短视频赛项 · 湖北省决赛 铜奖</h3>
+              <p class="honor-note">《The Hot-Dry Noodle Index》，团队作品，本人剪辑</p>
+            </div>
+          </li>
+          <li class="honor">
+            <span class="honor-year">2026</span>
+            <div>
+              <h3 class="honor-title">校优秀学生干部奖学金 / 自强奋进奖学金</h3>
+              
+            </div>
+          </li>
+          <li class="honor">
+            <span class="honor-year">2025</span>
+            <div>
+              <h3 class="honor-title">2025 年度优秀共青团员 · 校团委组织部「月度之星」</h3>
+              
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- ===== 关于 ===== -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="chapter-head reveal">
-          <span class="ch">Chapter V</span>
-          <h2 class="zh">关于我</h2>
-          <span class="en">About · Profile</span>
-        </div>
-        <div class="about-grid">
-          <div class="reveal">
-            <p class="about-kicker">Quick Intro</p>
-            <p class="about-text">
-              新闻传播本科生，熟悉传播规律与行业热点；具备<strong>新闻采写与评论、摄影摄像、新媒体运营、文化活动策划</strong>的完整实践链，擅长沟通与推动落地。我习惯把每件小事做到有回音，把每个创意落到可见的结果——从一篇稿子的结构，到一场活动的椅子摆放。
-            </p>
-            <p class="about-text" style="margin-top:26px">
-              同时具备摄影师的眼睛与工程师的手：一学年完成 41 场次校园新闻摄影，独立搭建个人作品网站（vibe coding）。<strong>「AIGC For Future」亚太区三等奖</strong>与曹林教授公众号刊发的新闻评论，是我的创作与表达能力证明。
-            </p>
-            <div class="about-quote">
-              "写作是对思考的整理，<br /><em>按下快门，是对世界的承认。</em>"
-            </div>
-            <div class="skill-list">
-              <span class="skill skill--hot">新闻采写</span>
-              <span class="skill skill--hot">新闻评论</span>
-              <span class="skill skill--hot">深度报道</span>
-              <span class="skill">人物特稿</span>
-              <span class="skill">摄影摄像</span>
-              <span class="skill">视频剪辑</span>
-              <span class="skill">新媒体运营</span>
-              <span class="skill skill--hot">文化活动策划</span>
-              <span class="skill">AIGC 创作</span>
-              <span class="skill">政务公文</span>
-              <span class="skill">独立开发</span>
-            </div>
+    <section class="section" id="contact">
+      <div class="shell">
+        <header class="section-head">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2 class="section-title">联系</h2>
           </div>
-          <aside class="about-side reveal">
-            <img src="/photos/street-04.webp" alt="摄影：修鞋的老人" loading="lazy" />
-            <div class="cap"><span>摄影 · 街头纪实</span><em>KRJ · 2026</em></div>
-            <div class="about-facts">
-              <div class="about-fact"><span class="k">姓名</span><span class="v">匡锐健</span></div>
-              <div class="about-fact"><span class="k">学校</span><span class="v">华中科技大学（985 / 双一流）</span></div>
-              <div class="about-fact"><span class="k">学院 · 专业</span><span class="v">新闻与信息传播学院 · 广播电视学（视听传播系）</span></div>
-              <div class="about-fact"><span class="k">身份</span><span class="v">学号 U202516374 · 广电 2501 · 共青团员（入党积极分子）</span></div>
-              <div class="about-fact"><span class="k">来自</span><span class="v">湖南</span></div>
-              <div class="about-fact"><span class="k">出生</span><span class="v">2007.04</span></div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 联系 ===== -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <h2 class="contact-ask contact-ask--en reveal">Contact <em>to</em></h2>
-        <div class="contact-channels reveal">
-          <a class="chan" href="mailto:2124582399@qq.com"><span class="lbl">邮箱 QQ</span>2124582399@qq.com<span class="arr">→</span></a>
-          <a class="chan" href="mailto:kuangruijian@163.com"><span class="lbl">邮箱 163</span>kuangruijian@163.com<span class="arr">→</span></a>
-          <a class="chan" href="tel:18273215290"><span class="lbl">电话</span>18273215290<span class="arr">→</span></a>
-        </div>
+          <div class="section-aside">
+            <div class="section-decor" data-shape="triangle" aria-hidden="true"><canvas aria-hidden="true"></canvas></div>
+          </div>
+        </header>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <span class="contact-value"><a href="mailto:2124582399@qq.com">2124582399@qq.com</a></span>
+          </li>
+          <li>
+            <span class="contact-label">Email</span>
+            <span class="contact-value"><a href="mailto:kuangruijian@163.com">kuangruijian@163.com</a></span>
+          </li>
+          <li>
+            <span class="contact-label">Phone</span>
+            <span class="contact-value"><a href="tel:18273215290">18273215290</a></span>
+          </li>
+        </ul>
+        <p class="contact-closing">武汉 · 2026</p>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <span>© 2026 匡锐健 · 华中科技大学新闻与信息传播学院</span>
-      <span class="en">Photography &amp; Copy by KRJ</span>
+  <footer class="site-foot">
+    <div class="shell">
+      <p>© 2026 匡锐健 KUANG RUIJIAN</p>
+      <p>Identity, in lines. — 用 Canvas 2D 画的个人作品集　<a href="#home">回到顶部 ↑</a></p>
     </div>
   </footer>
+<dialog class="dialog" id="source-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-inner">
+    <header class="dialog-head">
+      <p class="dialog-kicker">Source path &middot; 24 &times; 24</p>
+      <h2 id="dialog-title">记录 / Record</h2>
+    </header>
+    <div class="dialog-body" id="dialog-body">
+      <ul class="dialog-facts" id="dialog-facts"></ul>
+      <pre class="dialog-path" id="dialog-path" tabindex="0"></pre>
+    </div>
+    <footer class="dialog-foot">
+      <button class="dialog-close" id="dialog-close" type="button">Close</button>
+    </footer>
+  </div>
+</dialog>
+<div class="unsupported" id="unsupported" hidden>
+  <h2>Canvas 2D is not available</h2>
+  <p>This study renders each mark as a field of vertical line segments. The browser could not provide a 2D canvas or Path2D, so the line studies stay hidden. The written content above remains readable.</p>
+</div>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="照片查看" hidden>
+    <button class="lb-btn lb-close" id="lb-close" type="button">关闭 Esc</button>
+    <div class="lb-stage">
+      <img class="lb-img" id="lb-img" alt="">
+    </div>
+    <div class="lb-bar">
+      <button class="lb-btn" id="lb-prev" type="button" aria-label="上一张">← 上一张</button>
+      <span class="lb-caption" id="lb-caption"></span>
+      <button class="lb-btn" id="lb-next" type="button" aria-label="下一张">下一张 →</button>
+    </div>
+  </div>
+<script>
 
-  <script type="module" src="/src/main.js"></script>
+(function () {
+  'use strict';
+
+  /* ------------------------------------------------------------------ *
+   * Brand data — exact 24 x 24 paths are preserved character for character.
+   * ------------------------------------------------------------------ */
+  var BRANDS = {
+    record: {
+      name: 'Record', cn: '记录', seed: 3, scale: .82,
+      bg: '#eeeeeb', line: '#202220', detect: '#267dff',
+      path: 'M2.4 2.4h19.2v2.4H2.4zM2.4 19.2h19.2v2.4H2.4zM2.4 2.4h2.4v19.2H2.4zM19.2 2.4h2.4v19.2h-2.4zM6.6 8.2h10.8v2H6.6zM6.6 13.4h7.2v2H6.6z',
+      facts: [
+        '红星新闻深度报道《7年5轮诉讼、176位船民》实习生署名，参与实地采访与素材收集',
+        '曹林教授公众号「吐槽青年博士」刊发新闻评论《再评祁连》',
+        '极目新闻实习：视频报道撰稿与现场拍摄、《极目育见》短视频 5 条',
+        '南昌起义女兵褚志元人物特稿采写中；赴江西高安、南昌实地采访',
+        '一学年 41 场次校园新闻摄影、约 4027 张原图'
+      ]
+    },
+    create: {
+      name: 'Create', cn: '创作', seed: 29, scale: .79,
+      bg: '#1b3a8c', line: '#c2dcff', detect: '#91dcff',
+      path: 'M12 1.8 L14.5 9.5 L22.2 12 L14.5 14.5 L12 22.2 L9.5 14.5 L1.8 12 L9.5 9.5 Z',
+      facts: [
+        'AIGC 短片《山月记》——「AIGC For Future」全球挑战赛亚太区三等奖',
+        '原创 AI 歌曲《铅字山河》——「党报里的中国」三等奖：用新工具表达老主题',
+        '英语短片《The Hot-Dry Noodle Index》——「外研社·国才杯」湖北省决赛铜奖，本人剪辑',
+        '个人公众号「围坐闲谈」6 篇署名文章，单篇最高阅读 1 万＋',
+        '「树下说」系列 4 集，选题、脚本、配音到发布单人完成'
+      ]
+    },
+    organize: {
+      name: 'Organize', cn: '组织', seed: 51, scale: .81,
+      bg: '#101512', line: '#e3c98f', detect: '#4eaeff',
+      path: 'M2.6 2.6h5.6v5.6H2.6zM9.2 2.6h5.6v5.6H9.2zM15.8 2.6h5.6v5.6h-5.6zM5.4 10.2h13.2v2H5.4zM11.2 12.2h1.6v3.2h-1.6zM8.4 15.4h7.2v6H8.4z',
+      facts: [
+        '雨湖区委巡察办、易俗河镇党政办两段政务实习：公文、会议材料、会务与归档',
+        '宣恩万寨乡支教半个月：走访茶业公司与向家村直播基地，在茶农家里算一亩茶的账',
+        '学生社区文化建设部副部长：三项品牌活动策划、招新面试题库与部门条例编写',
+        '「返家乡」红石榴宣讲材料部组长：问卷设计与数据统计、案例筛选',
+        '校团委组织部「月度之星」：招新签到引导组组长、欢送会与签到墙、入党积极分子推荐会',
+        '广电 2501 班团支书；军训办公室宣传组；武汉马拉松志愿者'
+      ]
+    }
+  };
+
+  /* ------------------------------------------------------------------ *
+   * Constants
+   * ------------------------------------------------------------------ */
+  var GRID = 60;                /* grid cells per axis                */
+  var SEG_ROWS = 30;            /* segments per column                */
+  var TICK = 5;                 /* supersample pixels per cell        */
+  var TEMP_SIZE = 300;          /* offscreen sampling canvas          */
+  var SEG_TOTAL = GRID * SEG_ROWS;
+  var THRESHOLDS = [0.12, 0.42, 0.89];
+  var WIDTHS = [0.38, 1.12, 2.28, 3.80];
+  var ALPHAS = [0.15, 0.64, 0.93, 1];
+  var WIDTH_UNIT = 5.25;
+  var MINI_SIZE = 34;
+  var MINI_WIDTHS = [0.42, 0.72, 1.05, 1.45];
+  var MINI_ALPHAS = [0.14, 0.62, 0.88, 1];
+  var NOISE_SEED = 7319;
+  var NOISE_SIZE = 128;
+  var NOISE_MASK = 127;
+  var SPRING_K = 145, SPRING_C = 19, MAX_DT = 1 / 30;
+  var FRAME_K = 144, FRAME_C = 24, FRAME_SUB = 1 / 120;
+  var SCAN_INTERVAL = 100;
+  var GAUSS_W = 0.025;
+  var NMS_MAIN = 16, NMS_RELAX = 12, MATCH_DIST = 12;
+  var BOX_HALF_CELLS = 4.5;     /* 7x7 window grown by one cell       */
+  var REDUCED = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+
+  /* ------------------------------------------------------------------ *
+   * Diagnostics hook (read-only; used by the acceptance checks)
+   * ------------------------------------------------------------------ */
+  var probe = window.__IDENTITY_LINES__ = {
+    ready: false,
+    supported: true,
+    motion: true,
+    sampleCount: 0,
+    getImageDataCalls: 0,
+    tables: [],
+    gridCols: GRID,
+    segsPerCol: SEG_ROWS,
+    segmentTotal: SEG_TOTAL,
+    widths: WIDTHS.slice(),
+    alphas: ALPHAS.slice(),
+    thresholds: THRESHOLDS.slice(),
+    widthUnit: WIDTH_UNIT,
+    noiseSeed: NOISE_SEED,
+    strokeGroupsPerFrame: 4,
+    snapshot: function () {
+      return cards.map(function (c) {
+        var maxDisp = 0;
+        for (var i = 0; i < SEG_TOTAL; i++) {
+          var ax = Math.abs(c.dx[i]), ay = Math.abs(c.dy[i]);
+          if (ax > maxDisp) maxDisp = ax;
+          if (ay > maxDisp) maxDisp = ay;
+        }
+        return {
+          brand: c.brand.name,
+          elapsed: Math.round(c.elapsed * 1000) / 1000,
+          maxDisp: Math.round(maxDisp * 1000) / 1000,
+          pointerInside: c.pointer.inside,
+          keyFocus: c.keyFocus,
+          visible: c.visible,
+          targets: c.slots.filter(function (s) { return s.alpha > 0.02; }).map(function (s) {
+            return { x: Math.round(s.x * 100) / 100, y: Math.round(s.y * 100) / 100, tx: s.tx, ty: s.ty, alpha: Math.round(s.alpha * 100) / 100 };
+          }),
+          tableLength: c.table.length,
+          backingW: c.canvas.width,
+          backingH: c.canvas.height,
+          cssW: Math.round(c.w * 100) / 100,
+          cssH: Math.round(c.h * 100) / 100,
+          dpr: c.dpr,
+          columns: GRID,
+          rowsPerColumn: SEG_ROWS,
+          segments: c.counts[0] + c.counts[1] + c.counts[2] + c.counts[3],
+          levelCounts: c.counts.slice(),
+          lineWidths: WIDTHS.map(function (w) { return Math.round(w * (c.cell / WIDTH_UNIT) * 1000) / 1000; }),
+          slots: c.slots.filter(function (s) { return s.alpha > 0.02; }).length,
+          maxWindowMean: c.maxMean
+        };
+      });
+    }
+  };
+
+  var cards = [];
+  var state = {
+    motion: true,
+    pageVisible: !document.hidden,
+    modalOpen: false,
+    reduced: !!(REDUCED && REDUCED.matches),
+    userToggled: false
+  };
+  state.motion = !state.reduced;
+  probe.motion = state.motion;
+
+  /* ------------------------------------------------------------------ *
+   * Shared deterministic value-noise lattice
+   * ------------------------------------------------------------------ */
+  var NOISE = (function () {
+    var arr = new Float32Array(NOISE_SIZE * NOISE_SIZE);
+    var s = NOISE_SEED >>> 0;
+    for (var i = 0; i < arr.length; i++) {
+      s = (s ^ (s << 13)) >>> 0;
+      s = (s ^ (s >>> 17)) >>> 0;
+      s = (s ^ (s << 5)) >>> 0;
+      arr[i] = (s / 4294967295) * 2 - 1;
+    }
+    return arr;
+  })();
+
+  function noiseAt(x, y) {
+    var xi = Math.floor(x), yi = Math.floor(y);
+    var fx = x - xi, fy = y - yi;
+    var sx = fx * fx * (3 - 2 * fx);
+    var sy = fy * fy * (3 - 2 * fy);
+    var x0 = xi & NOISE_MASK, y0 = yi & NOISE_MASK;
+    var x1 = (xi + 1) & NOISE_MASK, y1 = (yi + 1) & NOISE_MASK;
+    var a = NOISE[y0 * NOISE_SIZE + x0], b = NOISE[y0 * NOISE_SIZE + x1];
+    var c = NOISE[y1 * NOISE_SIZE + x0], d = NOISE[y1 * NOISE_SIZE + x1];
+    var top = a + (b - a) * sx;
+    var bot = c + (d - c) * sx;
+    return top + (bot - top) * sy;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Path sampling — exactly once per brand, then the temp canvas is gone
+   * ------------------------------------------------------------------ */
+  function sampleBrand(brand) {
+    var temp = document.createElement('canvas');
+    temp.width = TEMP_SIZE;
+    temp.height = TEMP_SIZE;
+    var ctx = temp.getContext('2d', { willReadFrequently: true });
+
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, TEMP_SIZE, TEMP_SIZE);
+
+    var k = TEMP_SIZE * brand.scale / 24;
+    ctx.save();
+    ctx.translate(TEMP_SIZE / 2, TEMP_SIZE / 2);
+    ctx.scale(k, k);
+    ctx.translate(-12, -12);
+    ctx.fillStyle = '#ffffff';
+    ctx.fill(new Path2D(brand.path));
+    ctx.restore();
+
+    probe.getImageDataCalls++;
+    var pixels = ctx.getImageData(0, 0, TEMP_SIZE, TEMP_SIZE).data;
+    probe.sampleCount++;
+
+    var table = new Float32Array(GRID * GRID);
+    var out = 0;
+    for (var gy = 0; gy < GRID; gy++) {
+      for (var gx = 0; gx < GRID; gx++) {
+        var sum = 0;
+        for (var sy = 0; sy < TICK; sy++) {
+          var rowBase = ((gy * TICK + sy) * TEMP_SIZE) * 4;
+          for (var sx = 0; sx < TICK; sx++) {
+            var p = rowBase + (gx * TICK + sx) * 4;
+            sum += (0.2126 * pixels[p] + 0.7152 * pixels[p + 1] + 0.0722 * pixels[p + 2]) / 255;
+          }
+        }
+        table[out++] = sum / (TICK * TICK);
+      }
+    }
+
+    temp.width = 0;
+    temp.height = 0;
+    ctx = null;
+    pixels = null;
+    probe.tables.push(table.length);
+    return table;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Helpers
+   * ------------------------------------------------------------------ */
+  function mixHex(a, b, t) {
+    var ar = parseInt(a.slice(1, 3), 16), ag = parseInt(a.slice(3, 5), 16), ab = parseInt(a.slice(5, 7), 16);
+    var br = parseInt(b.slice(1, 3), 16), bg = parseInt(b.slice(3, 5), 16), bb = parseInt(b.slice(5, 7), 16);
+    return 'rgb(' + Math.round(ar + (br - ar) * t) + ', ' + Math.round(ag + (bg - ag) * t) + ', ' + Math.round(ab + (bb - ab) * t) + ')';
+  }
+
+  function boardColor(bg) {
+    var r = parseInt(bg.slice(1, 3), 16), g = parseInt(bg.slice(3, 5), 16), b = parseInt(bg.slice(5, 7), 16);
+    var lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+    return lum > 0.45 ? mixHex(bg, '#202220', 0.16) : mixHex(bg, '#fafaf8', 0.28);
+  }
+
+  function focusVisible(el) {
+    try { return !!(el.matches && el.matches(':focus-visible')); }
+    catch (err) { return true; }
+  }
+
+  function makeSlot() {
+    return {
+      hasTarget: false,
+      pending: null,
+      x: 0, y: 0, tx: 0, ty: 0, vx: 0, vy: 0,
+      alpha: 0, targetAlpha: 0
+    };
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Card construction
+   * ------------------------------------------------------------------ */
+  function buildMiniLogo(card) {
+    var size = card.logoSize;
+    var step = size / 30;
+    var groups = [[], [], [], []];
+    var table = card.table;
+    for (var r = 0; r < 30; r++) {
+      for (var c = 0; c < 30; c++) {
+        var gx = c * 2, gy = r * 2;
+        var gx2 = Math.min(gx + 1, GRID - 1), gy2 = Math.min(gy + 1, GRID - 1);
+        var b = (table[gy * GRID + gx] + table[gy * GRID + gx2] + table[gy2 * GRID + gx] + table[gy2 * GRID + gx2]) / 4;
+        if (b < THRESHOLDS[0]) continue;
+        var lvl = b < THRESHOLDS[1] ? 1 : (b < THRESHOLDS[2] ? 2 : 3);
+        groups[lvl].push((c + 0.5) * step, r * step + 0.12, (r + 1) * step - 0.12);
+      }
+    }
+    card.mini = groups;
+  }
+
+  function buildCard(plinth, brand) {
+    var host = plinth.querySelector('.card');
+    var canvas = host.querySelector('.field');
+    var board = plinth.querySelector('.board');
+    var topRow = host.querySelector('.card-top');
+    var bottom = host.querySelector('.card-bottom');
+    var reveal = host.querySelector('.reveal');
+    var ctx = canvas.getContext('2d', { alpha: true });
+
+    board.style.background = boardColor(brand.bg);
+
+    var card = {
+      plinth: plinth,
+      host: host,
+      canvas: canvas,
+      ctx: ctx,
+      board: board,
+      topRow: topRow,
+      bottom: bottom,
+      reveal: reveal,
+      brand: brand,
+      table: sampleBrand(brand),
+      w: 0, h: 0, dpr: 0, sx: 1, sy: 1,
+      cell: 1,
+      fieldX: 0, fieldY: 0, fieldW: 0, fieldH: 0,
+      pointerRadius: 1,
+      baseX: new Float32Array(SEG_TOTAL),
+      baseY: new Float32Array(SEG_TOTAL),
+      dx: new Float32Array(SEG_TOTAL),
+      dy: new Float32Array(SEG_TOTAL),
+      vx: new Float32Array(SEG_TOTAL),
+      vy: new Float32Array(SEG_TOTAL),
+      bucketX: [
+        new Float32Array(SEG_TOTAL), new Float32Array(SEG_TOTAL),
+        new Float32Array(SEG_TOTAL), new Float32Array(SEG_TOTAL)
+      ],
+      bucketY0: [
+        new Float32Array(SEG_TOTAL), new Float32Array(SEG_TOTAL),
+        new Float32Array(SEG_TOTAL), new Float32Array(SEG_TOTAL)
+      ],
+      bucketY1: [
+        new Float32Array(SEG_TOTAL), new Float32Array(SEG_TOTAL),
+        new Float32Array(SEG_TOTAL), new Float32Array(SEG_TOTAL)
+      ],
+      counts: [0, 0, 0, 0],
+      field: new Float32Array(GRID * GRID),
+      wsum: new Float32Array(GRID * GRID),
+      means: new Float32Array(GRID * GRID),
+      integral: new Float32Array((GRID + 1) * (GRID + 1)),
+      slots: [makeSlot(), makeSlot(), makeSlot()],
+      pointer: { inside: false, hasClient: false, clientX: 0, clientY: 0, x: 0, y: 0, lastX: 0, lastY: 0, pulse: 0 },
+      keyFocus: false,
+      visible: true,
+      elapsed: 0,
+      lastScan: 0,
+      maxMean: 0,
+      logoX: 0,
+      logoY: 0,
+      logoSize: MINI_SIZE,
+      mini: null
+    };
+
+    if (!ctx) { state.motion = false; }
+
+    buildMiniLogo(card);
+    bindCard(card);
+    plinth.__card = card;
+    return card;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Layout / device pixel buffer
+   * ------------------------------------------------------------------ */
+  function buildGeometry(card) {
+    var w = card.w, h = card.h;
+    if (!w || !h) return;
+    var canvasRect = card.canvas.getBoundingClientRect();
+    var topRect = card.topRow.getBoundingClientRect();
+    var bottomRect = card.bottom.getBoundingClientRect();
+    var topEdge = (topRect.bottom - canvasRect.top) + 8;
+    var bottomEdge = (bottomRect.top - canvasRect.top) - 12;
+    if (bottomEdge < topEdge + 60) bottomEdge = topEdge + 60;
+    var availH = bottomEdge - topEdge;
+    var availW = Math.max(80, w - 28);
+    var cell = Math.min(availW / GRID, availH / GRID);
+    var fieldW = cell * GRID;
+    card.cell = cell;
+    card.fieldX = (w - fieldW) / 2;
+    card.fieldY = topEdge + (availH - fieldW) / 2;
+    card.fieldW = fieldW;
+    card.fieldH = fieldW;
+    card.pointerRadius = fieldW / 4;
+    for (var row = 0; row < SEG_ROWS; row++) {
+      for (var col = 0; col < GRID; col++) {
+        var i = row * GRID + col;
+        card.baseX[i] = card.fieldX + (col + .5) * cell;
+        card.baseY[i] = card.fieldY + (row * 2 + 1) * cell;
+      }
+    }
+    card.logoX = topRect.left - canvasRect.left;
+    card.logoY = topRect.top - canvasRect.top;
+  }
+
+  function updateSize(card, rect) {
+    var w = rect.width, h = rect.height;
+    if (!(w > 0 && h > 0)) return false;
+    var dpr = window.devicePixelRatio || 1;
+    if (w === card.w && h === card.h && dpr === card.dpr) return false;
+    card.w = w;
+    card.h = h;
+    card.dpr = dpr;
+    var bw = Math.max(1, Math.round(w * dpr));
+    var bh = Math.max(1, Math.round(h * dpr));
+    card.canvas.width = bw;
+    card.canvas.height = bh;
+    card.sx = bw / w;
+    card.sy = bh / h;
+    card.ctx.setTransform(card.sx, 0, 0, card.sy, 0, 0);
+    card.ctx.lineCap = 'butt';
+    card.ctx.lineJoin = 'miter';
+    buildGeometry(card);
+    return true;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Drawing
+   * ------------------------------------------------------------------ */
+  function drawMiniLogo(card, ctx) {
+    var groups = card.mini;
+    if (!groups) return;
+    ctx.strokeStyle = card.brand.line;
+    for (var lvl = 0; lvl < 4; lvl++) {
+      var arr = groups[lvl];
+      if (!arr || !arr.length) continue;
+      ctx.globalAlpha = MINI_ALPHAS[lvl];
+      ctx.lineWidth = MINI_WIDTHS[lvl];
+      ctx.beginPath();
+      for (var k = 0; k < arr.length; k += 3) {
+        var x = card.logoX + arr[k];
+        ctx.moveTo(x, card.logoY + arr[k + 1]);
+        ctx.lineTo(x, card.logoY + arr[k + 2]);
+      }
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function drawOverlay(card, ctx) {
+    var slots = card.slots;
+    var i, any = false;
+    for (i = 0; i < slots.length; i++) {
+      if (slots[i].alpha > 0.015) { any = true; break; }
+    }
+    if (!any) return;
+
+    var cell = card.cell, fx = card.fieldX, fy = card.fieldY;
+    var color = card.brand.detect;
+    var half = BOX_HALF_CELLS * cell;
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+
+    /* thin connecting lines between consecutive identities */
+    for (i = 0; i < slots.length - 1; i++) {
+      var a = slots[i], b = slots[i + 1];
+      if (a.alpha < 0.02 || b.alpha < 0.02) continue;
+      ctx.globalAlpha = 0.6 * Math.min(a.alpha, b.alpha);
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(fx + (a.x + .5) * cell, fy + (a.y + .5) * cell);
+      ctx.lineTo(fx + (b.x + .5) * cell, fy + (b.y + .5) * cell);
+      ctx.stroke();
+    }
+
+    for (i = 0; i < slots.length; i++) {
+      var s = slots[i];
+      if (s.alpha < 0.02) continue;
+      var cx = fx + (s.x + .5) * cell;
+      var cy = fy + (s.y + .5) * cell;
+
+      ctx.globalAlpha = 0.1 * s.alpha;
+      ctx.fillRect(cx - half, cy - half, half * 2, half * 2);
+      ctx.globalAlpha = 0.8 * s.alpha;
+      ctx.lineWidth = 1;
+      ctx.strokeRect(cx - half + .5, cy - half + .5, half * 2 - 1, half * 2 - 1);
+
+      var arm = Math.min(half * .7, 18);
+      ctx.globalAlpha = s.alpha;
+      ctx.lineWidth = 2.4;
+      ctx.beginPath();
+      ctx.moveTo(cx - half, cy - half + arm); ctx.lineTo(cx - half, cy - half); ctx.lineTo(cx - half + arm, cy - half);
+      ctx.moveTo(cx + half - arm, cy - half); ctx.lineTo(cx + half, cy - half); ctx.lineTo(cx + half, cy - half + arm);
+      ctx.moveTo(cx + half, cy + half - arm); ctx.lineTo(cx + half, cy + half); ctx.lineTo(cx + half - arm, cy + half);
+      ctx.moveTo(cx - half + arm, cy + half); ctx.lineTo(cx - half, cy + half); ctx.lineTo(cx - half, cy + half - arm);
+      ctx.stroke();
+
+      /* centre crosshair on the exact detected cell */
+      ctx.globalAlpha = 0.9 * s.alpha;
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(cx - 4, cy); ctx.lineTo(cx + 4, cy);
+      ctx.moveTo(cx, cy - 4); ctx.lineTo(cx, cy + 4);
+      ctx.stroke();
+
+      var speed = Math.sqrt(s.vx * s.vx + s.vy * s.vy);
+      var label = speed > 0.03
+        ? (s.x).toFixed(1) + ', ' + (s.y).toFixed(1)
+        : String(s.tx) + ', ' + String(s.ty);
+      ctx.font = '700 10px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace';
+      ctx.textBaseline = 'middle';
+      ctx.textAlign = 'left';
+      var chipW = ctx.measureText(label).width + 10;
+      var chipH = 15;
+      var chipX = cx - half;
+      var chipY = Math.max(1, cy - half - 20);
+      ctx.globalAlpha = 0.94 * s.alpha;
+      ctx.fillStyle = color;
+      ctx.fillRect(chipX, chipY, chipW, chipH);
+      ctx.globalAlpha = s.alpha;
+      ctx.fillStyle = card.brand.bg;
+      ctx.fillText(label, chipX + 5, chipY + chipH / 2 + .5);
+      ctx.fillStyle = color;
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function draw(card) {
+    var ctx = card.ctx;
+    if (!ctx || !card.w || !card.h) return;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, card.canvas.width, card.canvas.height);
+    ctx.setTransform(card.sx, 0, 0, card.sy, 0, 0);
+    ctx.lineCap = 'butt';
+    ctx.lineJoin = 'miter';
+
+    var cell = card.cell, table = card.table, seed = card.brand.seed;
+    var elapsed = card.elapsed;
+    var dxa = card.dx, dya = card.dy, bx = card.baseX, by = card.baseY;
+    var bX = card.bucketX, bY0 = card.bucketY0, bY1 = card.bucketY1, counts = card.counts;
+    counts[0] = counts[1] = counts[2] = counts[3] = 0;
+    var segH = 2 * cell - .7;
+    var row, col, i, b, n, adj, lvl, x, y0, c;
+
+    for (row = 0; row < SEG_ROWS; row++) {
+      var r0 = row * 2, r1 = r0 + 1;
+      for (col = 0; col < GRID; col++) {
+        i = row * GRID + col;
+        b = (table[r0 * GRID + col] + table[r1 * GRID + col]) * .5;
+        n = noiseAt(col * .15 + seed, row * .16 - elapsed * .17);
+        adj = b * .94 + n * .12 * (.25 + b * .75);
+        lvl = adj < THRESHOLDS[0] ? 0 : (adj < THRESHOLDS[1] ? 1 : (adj < THRESHOLDS[2] ? 2 : 3));
+        x = bx[i] + dxa[i];
+        y0 = by[i] + dya[i] - cell + .35;
+        c = counts[lvl];
+        bX[lvl][c] = x;
+        bY0[lvl][c] = y0;
+        bY1[lvl][c] = y0 + segH;
+        counts[lvl] = c + 1;
+      }
+    }
+
+    ctx.strokeStyle = card.brand.line;
+    for (lvl = 0; lvl < 4; lvl++) {
+      var count = counts[lvl];
+      if (!count) continue;
+      ctx.globalAlpha = ALPHAS[lvl];
+      ctx.lineWidth = WIDTHS[lvl] * (cell / WIDTH_UNIT);
+      ctx.beginPath();
+      var xs = bX[lvl], ys0 = bY0[lvl], ys1 = bY1[lvl];
+      for (var j = 0; j < count; j++) {
+        ctx.moveTo(xs[j], ys0[j]);
+        ctx.lineTo(xs[j], ys1[j]);
+      }
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+
+    drawMiniLogo(card, ctx);
+    drawOverlay(card, ctx);
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Pointer spring field
+   * ------------------------------------------------------------------ */
+  function integrateSprings(card, dt) {
+    var p = card.pointer;
+    var dxa = card.dx, dya = card.dy, vxa = card.vx, vya = card.vy;
+    var bx = card.baseX, by = card.baseY;
+    var pulse = p.pulse;
+    var usePointer = p.inside && p.hasClient && pulse > 0.0005;
+    var px = p.x, py = p.y;
+    var r = card.pointerRadius, r2 = r * r;
+    var k = SPRING_K, c = SPRING_C;
+
+    for (var i = 0; i < SEG_TOTAL; i++) {
+      var tx = 0, ty = 0;
+      if (usePointer) {
+        var ddx = bx[i] - px, ddy = by[i] - py;
+        var d2 = ddx * ddx + ddy * ddy;
+        if (d2 < r2) {
+          var d = Math.sqrt(d2);
+          var f = 1 - d / r;
+          f = f * f;
+          var m = f * pulse * 25;
+          if (d > 0.0001) {
+            tx = (ddx / d) * m;
+            ty = (ddy / d) * m * .58;
+          }
+        }
+      }
+      var ax = k * (tx - dxa[i]) - c * vxa[i];
+      var ay = k * (ty - dya[i]) - c * vya[i];
+      vxa[i] += ax * dt;
+      vya[i] += ay * dt;
+      dxa[i] += vxa[i] * dt;
+      dya[i] += vya[i] * dt;
+      if (!usePointer &&
+          Math.abs(dxa[i]) < 0.02 && Math.abs(dya[i]) < 0.02 &&
+          Math.abs(vxa[i]) < 0.02 && Math.abs(vya[i]) < 0.02) {
+        dxa[i] = 0; dya[i] = 0; vxa[i] = 0; vya[i] = 0;
+      }
+    }
+
+    p.pulse *= Math.exp(-dt * 5.5);
+    if (p.pulse < 0.001) p.pulse = 0;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Deterministic detection over the live brightness field
+   * ------------------------------------------------------------------ */
+  function scanField(card) {
+    var field = card.field, wsum = card.wsum;
+    field.fill(0);
+    wsum.fill(0);
+
+    var table = card.table, dxa = card.dx, dya = card.dy;
+    var bx = card.baseX, by = card.baseY;
+    var cell = card.cell, fx = card.fieldX, fy = card.fieldY;
+    var elapsed = card.elapsed, seed = card.brand.seed;
+    var row, col, i, b, n, adj, x, y, gx, gy, c0, r0, u, t;
+
+    for (row = 0; row < SEG_ROWS; row++) {
+      var rA = row * 2, rB = rA + 1;
+      for (col = 0; col < GRID; col++) {
+        i = row * GRID + col;
+        b = (table[rA * GRID + col] + table[rB * GRID + col]) * .5;
+        n = noiseAt(col * .15 + seed, row * .16 - elapsed * .17);
+        adj = b * .94 + n * .12 * (.25 + b * .75);
+
+        x = bx[i] + dxa[i];
+        y = by[i] + dya[i];
+        gx = (x - fx) / cell - .5;
+        gy = (y - fy) / cell - .5;
+        c0 = Math.floor(gx);
+        u = gx - c0;
+        r0 = Math.floor(gy);
+        t = gy - r0;
+
+        var w00 = (1 - u) * (1 - t), w10 = u * (1 - t), w01 = (1 - u) * t, w11 = u * t;
+        var c1 = c0 + 1, r1 = r0 + 1;
+
+        if (c0 >= 0 && c0 < GRID && r0 >= 0 && r0 < GRID) {
+          var id00 = r0 * GRID + c0;
+          field[id00] += adj * w00; wsum[id00] += w00;
+        }
+        if (c1 >= 0 && c1 < GRID && r0 >= 0 && r0 < GRID) {
+          var id10 = r0 * GRID + c1;
+          field[id10] += adj * w10; wsum[id10] += w10;
+        }
+        if (c0 >= 0 && c0 < GRID && r1 >= 0 && r1 < GRID) {
+          var id01 = r1 * GRID + c0;
+          field[id01] += adj * w01; wsum[id01] += w01;
+        }
+        if (c1 >= 0 && c1 < GRID && r1 >= 0 && r1 < GRID) {
+          var id11 = r1 * GRID + c1;
+          field[id11] += adj * w11; wsum[id11] += w11;
+        }
+      }
+    }
+
+    for (i = 0; i < GRID * GRID; i++) {
+      field[i] = wsum[i] > 0 ? field[i] / wsum[i] : 0;
+    }
+
+    var I = card.integral, n1 = GRID + 1;
+    for (i = 0; i <= GRID; i++) { I[i] = 0; I[i * n1] = 0; }
+    for (var r = 1; r <= GRID; r++) {
+      var accRow = 0;
+      for (var c = 1; c <= GRID; c++) {
+        accRow += field[(r - 1) * GRID + (c - 1)];
+        I[r * n1 + c] = I[(r - 1) * n1 + c] + accRow;
+      }
+    }
+  }
+
+  function nms(candidates, separation) {
+    var kept = [];
+    var sep2 = separation * separation;
+    for (var i = 0; i < candidates.length && kept.length < 3; i++) {
+      var ok = true;
+      for (var j = 0; j < kept.length; j++) {
+        var ddx = candidates[i].col - kept[j].col;
+        var ddy = candidates[i].row - kept[j].row;
+        if (ddx * ddx + ddy * ddy < sep2) { ok = false; break; }
+      }
+      if (ok) kept.push(candidates[i]);
+    }
+    return kept;
+  }
+
+  function findRegions(card) {
+    var means = card.means, I = card.integral, n1 = GRID + 1;
+    means.fill(0);
+    var r, c, sum, mean, maxMean = 0;
+
+    for (r = 3; r < GRID - 3; r++) {
+      for (c = 3; c < GRID - 3; c++) {
+        sum = I[(r + 4) * n1 + (c + 4)] - I[(r - 3) * n1 + (c + 4)]
+            - I[(r + 4) * n1 + (c - 3)] + I[(r - 3) * n1 + (c - 3)];
+        mean = sum / 49;
+        means[r * GRID + c] = mean;
+        if (mean > maxMean) maxMean = mean;
+      }
+    }
+    card.maxMean = maxMean;
+    if (maxMean < 0.04) return [];
+
+    var prev = [];
+    for (var s = 0; s < card.slots.length; s++) {
+      var sl = card.slots[s];
+      if (sl.hasTarget) prev.push([sl.tx, sl.ty]);
+    }
+
+    var floorScore = maxMean * 0.48;
+    var candidates = [];
+    for (r = 3; r < GRID - 3; r++) {
+      for (c = 3; c < GRID - 3; c++) {
+        mean = means[r * GRID + c];
+        if (mean < floorScore) continue;
+        var continuity = 0;
+        for (var p = 0; p < prev.length; p++) {
+          var ddx = c - prev[p][0], ddy = r - prev[p][1];
+          var w = GAUSS_W * Math.exp(-(ddx * ddx + ddy * ddy) / 128);
+          if (w > continuity) continuity = w;
+        }
+        candidates.push({ col: c, row: r, mean: mean, score: mean + continuity });
+      }
+    }
+    candidates.sort(function (a, b) { return b.score - a.score; });
+
+    var kept = nms(candidates, NMS_MAIN);
+    if (kept.length < 2) kept = nms(candidates, NMS_RELAX);
+    if (kept.length > 3) kept = kept.slice(0, 3);
+
+    var out = [];
+    for (var k = 0; k < kept.length; k++) {
+      out.push({ gx: kept[k].col, gy: kept[k].row, mean: kept[k].mean });
+    }
+    return out;
+  }
+
+  function scanAndTrack(card) {
+    scanField(card);
+    var regions = findRegions(card);
+    var slots = card.slots;
+    var i, j;
+    var usedRegion = [];
+    var matchedSlot = [];
+    for (i = 0; i < regions.length; i++) usedRegion[i] = false;
+
+    /* 1. keep identities: match a region to an existing target within 12 cells */
+    for (i = 0; i < slots.length; i++) {
+      var slot = slots[i];
+      matchedSlot[i] = false;
+      if (!slot.hasTarget || slot.pending) continue;
+      var best = -1, bestD = MATCH_DIST + 1;
+      for (j = 0; j < regions.length; j++) {
+        if (usedRegion[j]) continue;
+        var ddx = regions[j].gx - slot.tx, ddy = regions[j].gy - slot.ty;
+        var d = Math.sqrt(ddx * ddx + ddy * ddy);
+        if (d <= MATCH_DIST && d < bestD) { bestD = d; best = j; }
+      }
+      if (best >= 0) {
+        usedRegion[best] = true;
+        slot.tx = regions[best].gx;
+        slot.ty = regions[best].gy;
+        slot.targetAlpha = 1;
+        matchedSlot[i] = true;
+      }
+    }
+
+    /* 2. unmatched existing targets fade away */
+    for (i = 0; i < slots.length; i++) {
+      if (slots[i].hasTarget && !matchedSlot[i] && !slots[i].pending) {
+        slots[i].targetAlpha = 0;
+      }
+    }
+
+    /* 3. remaining regions adopt a free slot, or replace a faded-out one */
+    for (j = 0; j < regions.length; j++) {
+      if (usedRegion[j]) continue;
+      var free = -1, fading = -1;
+      for (i = 0; i < slots.length; i++) {
+        var st = slots[i];
+        if (!st.hasTarget && !st.pending) { free = i; break; }
+        if (fading < 0 && st.hasTarget && !st.pending && st.targetAlpha === 0) fading = i;
+      }
+      if (free >= 0) {
+        var f = slots[free];
+        f.hasTarget = true;
+        f.pending = null;
+        f.tx = regions[j].gx;
+        f.ty = regions[j].gy;
+        f.x = regions[j].gx;
+        f.y = regions[j].gy;
+        f.vx = 0; f.vy = 0;
+        f.alpha = 0;
+        f.targetAlpha = 1;
+        usedRegion[j] = true;
+      } else if (fading >= 0) {
+        slots[fading].pending = { gx: regions[j].gx, gy: regions[j].gy };
+        slots[fading].targetAlpha = 0;
+        usedRegion[j] = true;
+      }
+    }
+
+    for (i = 0; i < slots.length; i++) {
+      if (!slots[i].hasTarget && !slots[i].pending) slots[i].targetAlpha = 0;
+    }
+  }
+
+  function dismissSlots(card) {
+    for (var i = 0; i < card.slots.length; i++) {
+      card.slots[i].targetAlpha = 0;
+      card.slots[i].pending = null;
+    }
+  }
+
+  function clearSlots(card) {
+    for (var i = 0; i < card.slots.length; i++) {
+      var s = card.slots[i];
+      s.hasTarget = false;
+      s.pending = null;
+      s.alpha = 0;
+      s.targetAlpha = 0;
+      s.vx = 0;
+      s.vy = 0;
+    }
+  }
+
+  function applyStable(card) {
+    for (var i = 0; i < card.slots.length; i++) {
+      var s = card.slots[i];
+      if (s.pending) {
+        s.x = s.pending.gx; s.y = s.pending.gy;
+        s.tx = s.pending.gx; s.ty = s.pending.gy;
+        s.pending = null;
+        s.hasTarget = true;
+        s.alpha = 0;
+      }
+      s.alpha = s.targetAlpha;
+      s.vx = 0;
+      s.vy = 0;
+      if (s.hasTarget) { s.x = s.tx; s.y = s.ty; }
+    }
+  }
+
+  function updateSlots(card, dt) {
+    var slots = card.slots;
+    var fade = 1 - Math.exp(-dt * 16);
+    for (var i = 0; i < slots.length; i++) {
+      var s = slots[i];
+      if (s.pending && s.alpha < 0.04) {
+        s.x = s.pending.gx; s.y = s.pending.gy;
+        s.tx = s.pending.gx; s.ty = s.pending.gy;
+        s.vx = 0; s.vy = 0;
+        s.pending = null;
+        s.hasTarget = true;
+        s.alpha = 0;
+        s.targetAlpha = 1;
+      }
+      s.alpha += (s.targetAlpha - s.alpha) * fade;
+      if (s.targetAlpha === 1 && s.alpha > 0.995) s.alpha = 1;
+      if (s.targetAlpha === 0 && s.alpha < 0.02) {
+        s.alpha = 0;
+        if (!s.pending) s.hasTarget = false;
+      }
+      if (s.hasTarget && !s.pending) {
+        var remaining = dt;
+        while (remaining > 1e-6) {
+          var h = remaining < FRAME_SUB ? remaining : FRAME_SUB;
+          remaining -= h;
+          var ax = FRAME_K * (s.tx - s.x) - FRAME_C * s.vx;
+          var ay = FRAME_K * (s.ty - s.y) - FRAME_C * s.vy;
+          s.vx += ax * h;
+          s.vy += ay * h;
+          s.x += s.vx * h;
+          s.y += s.vy * h;
+        }
+        if (Math.abs(s.tx - s.x) < 0.0015 && Math.abs(s.vx) < 0.0015) { s.x = s.tx; s.vx = 0; }
+        if (Math.abs(s.ty - s.y) < 0.0015 && Math.abs(s.vy) < 0.0015) { s.y = s.ty; s.vy = 0; }
+      }
+    }
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Frame loop and lifecycle
+   * ------------------------------------------------------------------ */
+  var rafId = 0;
+  var lastTs = 0;
+
+  function overlayVisible(card) {
+    return card.pointer.inside || card.keyFocus;
+  }
+
+  function canAnimateCard(card) {
+    return state.motion && state.pageVisible && !state.modalOpen && card.visible;
+  }
+
+  function anyAnimatable() {
+    for (var i = 0; i < cards.length; i++) {
+      if (canAnimateCard(cards[i])) return true;
+    }
+    return false;
+  }
+
+  function schedule() {
+    if (rafId) return;
+    if (!anyAnimatable()) return;
+    lastTs = 0;
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function tick(ts) {
+    rafId = 0;
+    if (!anyAnimatable()) { lastTs = 0; return; }
+    var dt = lastTs ? Math.min((ts - lastTs) / 1000, MAX_DT) : 1 / 60;
+    lastTs = ts;
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      if (!canAnimateCard(card)) continue;
+      stepCard(card, dt, ts);
+    }
+    if (anyAnimatable()) rafId = requestAnimationFrame(tick);
+    else lastTs = 0;
+  }
+
+  function stepCard(card, dt, ts) {
+    var rect = card.canvas.getBoundingClientRect();
+    if (!(rect.width > 0 && rect.height > 0)) return;
+    updateSize(card, rect);
+    card.elapsed += dt;
+
+    var p = card.pointer;
+    if (p.hasClient) {
+      p.x = p.clientX - rect.left;
+      p.y = p.clientY - rect.top;
+    }
+
+    integrateSprings(card, dt);
+
+    var visible = overlayVisible(card);
+    if (visible) {
+      if (!card.lastScan || ts - card.lastScan >= SCAN_INTERVAL) {
+        card.lastScan = ts;
+        scanAndTrack(card);
+      }
+    } else {
+      dismissSlots(card);
+      card.lastScan = 0;
+    }
+
+    updateSlots(card, dt);
+    draw(card);
+  }
+
+  function renderStatic(card) {
+    if (!card.ctx) return;
+    var rect = card.canvas.getBoundingClientRect();
+    if (!(rect.width > 0 && rect.height > 0)) return;
+    updateSize(card, rect);
+    card.dx.fill(0); card.dy.fill(0);
+    card.vx.fill(0); card.vy.fill(0);
+    card.pointer.pulse = 0;
+    if (overlayVisible(card)) {
+      scanAndTrack(card);
+      applyStable(card);
+    } else {
+      clearSlots(card);
+    }
+    draw(card);
+  }
+
+  function renderAllStatic() {
+    for (var i = 0; i < cards.length; i++) renderStatic(cards[i]);
+  }
+
+  var statusEl = document.getElementById('status');
+  var lastStatus = '';
+  function setStatus(text) {
+    if (text === lastStatus) return;
+    lastStatus = text;
+    if (statusEl) statusEl.textContent = text;
+  }
+  function updateStatus() {
+    var text;
+    if (!probe.supported) text = 'Canvas unavailable';
+    else if (state.modalOpen) text = 'Source path open';
+    else if (!state.motion) text = 'Motion paused';
+    else if (!state.pageVisible) text = 'Idle';
+    else text = 'Motion running';
+    setStatus(text);
+  }
+
+  /* While paused there are no animation frames, so a DPR-only change is caught
+     by the resolution media query below plus this very light guard. The guard
+     draws nothing unless the cached DPR really differs, then paints exactly one
+     still frame; it is cleared the moment motion runs again. */
+  var dprGuard = 0;
+  function startDprGuard() {
+    if (dprGuard) return;
+    dprGuard = setInterval(function () {
+      if (state.motion) { stopDprGuard(); return; }
+      var dpr = window.devicePixelRatio || 1;
+      for (var i = 0; i < cards.length; i++) {
+        if (cards[i].w > 0 && cards[i].dpr !== dpr) { renderAllStatic(); return; }
+      }
+    }, 350);
+  }
+  function stopDprGuard() {
+    if (dprGuard) { clearInterval(dprGuard); dprGuard = 0; }
+  }
+
+  /* Motion switch */
+  var switchEl = document.getElementById('motion-switch');
+  function setMotion(on, user) {
+    state.motion = !!on;
+    if (user) state.userToggled = true;
+    probe.motion = state.motion;
+    if (switchEl) switchEl.setAttribute('aria-pressed', state.motion ? 'true' : 'false');
+    if (!state.motion) {
+      renderAllStatic();
+      startDprGuard();
+    } else {
+      stopDprGuard();
+      schedule();
+    }
+    updateStatus();
+  }
+  if (switchEl) {
+    switchEl.addEventListener('click', function () { setMotion(!state.motion, true); });
+  }
+  if (switchEl) switchEl.setAttribute('aria-pressed', state.motion ? 'true' : 'false');
+
+  /* Source dialog */
+  var dialog = document.getElementById('source-dialog');
+  var dialogTitle = document.getElementById('dialog-title');
+  var dialogPath = document.getElementById('dialog-path');
+  var dialogClose = document.getElementById('dialog-close');
+  var dialogFacts = document.getElementById('dialog-facts');
+
+  function openSource(brand) {
+    if (!dialog || !dialogTitle || !dialogPath) return;
+    dialogTitle.textContent = brand.cn ? brand.cn + ' / ' + brand.name : brand.name;
+    dialogPath.textContent = brand.path;
+    if (dialogFacts) {
+      while (dialogFacts.firstChild) dialogFacts.removeChild(dialogFacts.firstChild);
+      var facts = brand.facts || [];
+      for (var f = 0; f < facts.length; f++) {
+        var item = document.createElement('li');
+        item.textContent = facts[f];
+        dialogFacts.appendChild(item);
+      }
+    }
+    state.modalOpen = true;
+    updateStatus();
+    if (typeof dialog.showModal === 'function') {
+      if (!dialog.open) dialog.showModal();
+    } else {
+      dialog.setAttribute('open', 'open');
+    }
+    if (dialogClose) dialogClose.focus();
+    renderAllStatic();
+  }
+  if (dialog) {
+    dialog.addEventListener('close', function () {
+      state.modalOpen = false;
+      updateStatus();
+      schedule();
+    });
+    dialog.addEventListener('cancel', function () {
+      state.modalOpen = false;
+      updateStatus();
+      schedule();
+    });
+    dialog.addEventListener('click', function (e) {
+      if (e.target === dialog) {
+        if (typeof dialog.close === 'function') dialog.close();
+        else dialog.removeAttribute('open');
+      }
+    });
+  }
+  if (dialogClose) {
+    dialogClose.addEventListener('click', function () {
+      if (dialog && typeof dialog.close === 'function') dialog.close();
+      else if (dialog) dialog.removeAttribute('open');
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Per-card pointer / focus wiring
+   * ------------------------------------------------------------------ */
+  function bindCard(card) {
+    var host = card.host, p = card.pointer;
+
+    function localize(e) {
+      p.hasClient = true;
+      p.clientX = e.clientX;
+      p.clientY = e.clientY;
+    }
+    function kick() {
+      card.lastScan = 0;
+      if (canAnimateCard(card)) schedule();
+      else renderStatic(card);
+    }
+
+    host.addEventListener('pointerenter', function (e) {
+      p.inside = true;
+      localize(e);
+      p.lastX = e.clientX;
+      p.lastY = e.clientY;
+      p.pulse = 1;
+      kick();
+    });
+    host.addEventListener('pointermove', function (e) {
+      p.inside = true;
+      localize(e);
+      var ddx = e.clientX - p.lastX, ddy = e.clientY - p.lastY;
+      if (ddx * ddx + ddy * ddy > 2.25) {
+        p.lastX = e.clientX;
+        p.lastY = e.clientY;
+        p.pulse = 1;
+      }
+      if (canAnimateCard(card)) schedule();
+    });
+    host.addEventListener('pointerleave', function () {
+      p.inside = false;
+      p.pulse = 0;
+      kick();
+    });
+    host.addEventListener('pointerdown', function (e) {
+      p.inside = true;
+      localize(e);
+      p.lastX = e.clientX;
+      p.lastY = e.clientY;
+      p.pulse = 1;
+      kick();
+    });
+    host.addEventListener('pointercancel', function () {
+      p.inside = false;
+      p.pulse = 0;
+      kick();
+    });
+    host.addEventListener('focus', function () {
+      card.keyFocus = focusVisible(host);
+      kick();
+    });
+    host.addEventListener('focusout', function () {
+      card.keyFocus = false;
+      kick();
+    });
+    card.reveal.addEventListener('click', function (e) {
+      e.stopPropagation();
+      openSource(card.brand);
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Boot
+   * ------------------------------------------------------------------ */
+  function showUnsupported() {
+    probe.supported = false;
+    probe.ready = true;
+    var note = document.getElementById('unsupported');
+    if (note) note.hidden = false;
+    var list = document.getElementById('cards');
+    if (list) list.hidden = true;
+    var controls = document.querySelector('.controls');
+    if (controls) controls.hidden = true;
+    updateStatus();
+  }
+
+  function supportsCanvas() {
+    try {
+      if (typeof window.Path2D !== 'function') return false;
+      var c = document.createElement('canvas');
+      return !!(c.getContext && c.getContext('2d'));
+    } catch (err) {
+      return false;
+    }
+  }
+
+  function boot() {
+    if (!supportsCanvas()) { showUnsupported(); return; }
+    var nodes = document.querySelectorAll('[data-brand]');
+    for (var i = 0; i < nodes.length; i++) {
+      var plinth = nodes[i];
+      var brand = BRANDS[plinth.getAttribute('data-brand')];
+      if (!brand) continue;
+      cards.push(buildCard(plinth, brand));
+    }
+
+    requestAnimationFrame(function () {
+      renderAllStatic();
+      probe.ready = true;
+      if (state.motion) schedule();
+      else startDprGuard();
+      updateStatus();
+    });
+
+    window.addEventListener('load', function () {
+      for (var k = 0; k < cards.length; k++) {
+        renderStatic(cards[k]);
+      }
+    });
+
+    if (window.ResizeObserver) {
+      var ro = new ResizeObserver(function (entries) {
+        for (var e = 0; e < entries.length; e++) {
+          var card = entries[e].target.__card;
+          if (!card) continue;
+          if (canAnimateCard(card)) schedule();
+          else renderStatic(card);
+        }
+      });
+      for (var r = 0; r < cards.length; r++) {
+        cards[r].canvas.__card = cards[r];
+        ro.observe(cards[r].canvas);
+      }
+    }
+
+    if (window.IntersectionObserver) {
+      var io = new IntersectionObserver(function (entries) {
+        for (var e = 0; e < entries.length; e++) {
+          var card = entries[e].target.__card;
+          if (!card) continue;
+          card.visible = entries[e].isIntersecting;
+          if (card.visible && !canAnimateCard(card)) renderStatic(card);
+        }
+        if (anyAnimatable()) schedule();
+      }, { rootMargin: '100px 0px' });
+      for (var q = 0; q < cards.length; q++) {
+        cards[q].plinth.__card = cards[q];
+        io.observe(cards[q].plinth);
+      }
+    } else {
+      for (var v = 0; v < cards.length; v++) cards[v].visible = true;
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      state.pageVisible = !document.hidden;
+      lastTs = 0;
+      if (state.pageVisible) {
+        if (state.motion) schedule();
+        else { renderAllStatic(); startDprGuard(); }
+      } else {
+        stopDprGuard();
+      }
+      updateStatus();
+    });
+
+    window.addEventListener('resize', function () {
+      lastTs = 0;
+      if (state.motion && state.pageVisible && !state.modalOpen) schedule();
+      else renderAllStatic();
+    });
+
+    /* DPR change without a CSS resize: rebind the resolution query */
+    var dprQuery = null;
+    function onDPRChange() {
+      watchDPR();
+      if (state.motion && state.pageVisible && !state.modalOpen) schedule();
+      else renderAllStatic();
+    }
+    function watchDPR() {
+      if (!window.matchMedia) return;
+      if (dprQuery) {
+        if (dprQuery.removeEventListener) dprQuery.removeEventListener('change', onDPRChange);
+        else if (dprQuery.removeListener) dprQuery.removeListener(onDPRChange);
+      }
+      var dpr = window.devicePixelRatio || 1;
+      dprQuery = window.matchMedia('(resolution: ' + dpr + 'dppx)');
+      if (dprQuery.addEventListener) dprQuery.addEventListener('change', onDPRChange);
+      else if (dprQuery.addListener) dprQuery.addListener(onDPRChange);
+    }
+    watchDPR();
+
+    if (REDUCED && REDUCED.addEventListener) {
+      REDUCED.addEventListener('change', function () {
+        state.reduced = REDUCED.matches;
+        if (!state.userToggled) setMotion(!state.reduced, false);
+      });
+    }
+  }
+
+  try {
+    boot();
+  } catch (err) {
+    showUnsupported();
+  }
+})();
+
+</script>
+<script>
+
+(function () {
+  'use strict';
+  var buttons = [].slice.call(document.querySelectorAll('.photo'));
+  var lb = document.getElementById('lightbox');
+  if (!lb || !buttons.length) return;
+  var img = document.getElementById('lb-img');
+  var cap = document.getElementById('lb-caption');
+  var closeBtn = document.getElementById('lb-close');
+  var prevBtn = document.getElementById('lb-prev');
+  var nextBtn = document.getElementById('lb-next');
+  var current = -1;
+  var lastFocus = null;
+
+  function render(i) {
+    current = i;
+    var b = buttons[i];
+    img.src = b.getAttribute('data-full');
+    img.alt = b.getAttribute('data-caption');
+    cap.textContent = b.getAttribute('data-caption') + ' · ' + (i + 1) + ' / ' + buttons.length;
+  }
+  function open(i) {
+    lastFocus = buttons[i];
+    render(i);
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function close() {
+    lb.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function step(d) {
+    if (current < 0) return;
+    render((current + d + buttons.length) % buttons.length);
+  }
+  for (var i = 0; i < buttons.length; i++) {
+    (function (idx) {
+      buttons[idx].addEventListener('click', function () { open(idx); });
+    })(i);
+  }
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', function () { step(-1); });
+  nextBtn.addEventListener('click', function () { step(1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('lb-stage')) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); return; }
+    if (e.key === 'ArrowRight') { e.preventDefault(); step(1); return; }
+    if (e.key === 'Tab') {
+      var order = [closeBtn, prevBtn, nextBtn];
+      var idx = order.indexOf(document.activeElement);
+      e.preventDefault();
+      var next = idx < 0 ? 0 : (idx + (e.shiftKey ? order.length - 1 : 1)) % order.length;
+      order[next].focus();
+    }
+  });
+})();
+
+/* static line-field ornaments in the section heads (same quantised language as the hero cards) */
+(function () {
+  'use strict';
+  if (!window.Path2D) return;
+  var WIDTHS = [0.38, 1.12, 2.28, 3.80];
+  var ALPHAS = [0.15, 0.64, 0.93, 1];
+  var THRESH = [0.12, 0.42, 0.89];
+  var COLS = 60, ROWS = 24, SS = 5;
+  var SHAPES = {
+    frame: function () {
+      var p = new Path2D();
+      p.rect(2.6, 2.6, 18.8, 18.8);
+      p.moveTo(6.4, 17.6); p.lineTo(17.6, 17.6); p.lineTo(17.6, 6.4); p.lineTo(6.4, 6.4); p.closePath();
+      return p;
+    },
+    ring: function () {
+      var p = new Path2D();
+      p.arc(12, 12, 9.4, 0, Math.PI * 2, false);
+      p.moveTo(17.2, 12); p.arc(12, 12, 5.2, 0, Math.PI * 2, true);
+      return p;
+    },
+    steps: function () {
+      var p = new Path2D();
+      p.rect(2.6, 15.2, 5.2, 5.2);
+      p.rect(9.4, 10.4, 5.2, 10);
+      p.rect(16.2, 5.6, 5.2, 14.8);
+      return p;
+    },
+    diamond: function () { return new Path2D('M12 2.6 L21.4 12 L12 21.4 L2.6 12 Z'); },
+    bars: function () {
+      var p = new Path2D();
+      p.rect(2.6, 5.2, 18.8, 4.4);
+      p.rect(2.6, 14.4, 18.8, 4.4);
+      return p;
+    },
+    triangle: function () { return new Path2D('M12 2.8 L21.6 20.8 L2.4 20.8 Z'); }
+  };
+  var canvases = [];
+  var list = document.querySelectorAll('.section-decor canvas');
+  for (var i = 0; i < list.length; i++) canvases.push(list[i]);
+  if (!canvases.length) return;
+  var off = document.createElement('canvas');
+  off.width = COLS * SS;
+  off.height = ROWS * SS;
+  var octx = off.getContext('2d', { willReadFrequently: true });
+  if (!octx) return;
+
+  function drawDecor(canvas) {
+    var host = canvas.parentNode;
+    var shapeName = host && host.getAttribute ? host.getAttribute('data-shape') : '';
+    var build = SHAPES[shapeName] || SHAPES.ring;
+    var rect = canvas.getBoundingClientRect();
+    var w = rect.width, h = rect.height;
+    if (!w || !h) return;
+    var dpr = window.devicePixelRatio || 1;
+    var bw = Math.max(1, Math.round(w * dpr));
+    var bh = Math.max(1, Math.round(h * dpr));
+    canvas.width = bw;
+    canvas.height = bh;
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, bw, bh);
+    ctx.setTransform(bw / w, 0, 0, bh / h, 0, 0);
+
+    octx.setTransform(1, 0, 0, 1, 0, 0);
+    octx.fillStyle = '#000000';
+    octx.fillRect(0, 0, off.width, off.height);
+    var size = off.height * 0.82;
+    var k = size / 24;
+    var pitch = off.height * 0.98;
+    for (var t = -1; t <= 1; t++) {
+      octx.save();
+      octx.translate(off.width / 2 + t * pitch, off.height / 2);
+      octx.scale(k, k);
+      octx.translate(-12, -12);
+      octx.fillStyle = '#ffffff';
+      octx.fill(build());
+      octx.restore();
+    }
+    var px = octx.getImageData(0, 0, off.width, off.height).data;
+    var table = new Float32Array(COLS * ROWS);
+    var row, col, sy, sx, q, sum;
+    for (row = 0; row < ROWS; row++) {
+      for (col = 0; col < COLS; col++) {
+        sum = 0;
+        for (sy = 0; sy < SS; sy++) {
+          for (sx = 0; sx < SS; sx++) {
+            q = (((row * SS + sy) * off.width) + col * SS + sx) * 4;
+            sum += (0.2126 * px[q] + 0.7152 * px[q + 1] + 0.0722 * px[q + 2]) / 255;
+          }
+        }
+        table[row * COLS + col] = sum / (SS * SS);
+      }
+    }
+    var cell = w / COLS;
+    var rowH = h / ROWS;
+    var segH = rowH * 2 - 0.7;
+    var groups = [[], [], [], []];
+    var seg, b, lv, y;
+    for (seg = 0; seg < ROWS / 2; seg++) {
+      y = seg * rowH * 2 + 0.35;
+      for (col = 0; col < COLS; col++) {
+        b = (table[(seg * 2) * COLS + col] + table[(seg * 2 + 1) * COLS + col]) / 2;
+        lv = b < THRESH[0] ? 0 : (b < THRESH[1] ? 1 : (b < THRESH[2] ? 2 : 3));
+        groups[lv].push((col + 0.5) * cell, y, y + segH);
+      }
+    }
+    var section = host && host.closest ? host.closest('.section') : null;
+    ctx.strokeStyle = section ? getComputedStyle(section).color : getComputedStyle(document.body).color;
+    ctx.lineCap = 'butt';
+    for (var g = 0; g < 4; g++) {
+      var arr = groups[g];
+      if (!arr.length) continue;
+      ctx.globalAlpha = ALPHAS[g];
+      ctx.lineWidth = WIDTHS[g] * (cell / 5.25);
+      ctx.beginPath();
+      for (var j = 0; j < arr.length; j += 3) {
+        ctx.moveTo(arr[j], arr[j + 1]);
+        ctx.lineTo(arr[j], arr[j + 2]);
+      }
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function renderAll() {
+    for (var i = 0; i < canvases.length; i++) drawDecor(canvases[i]);
+  }
+  renderAll();
+  window.addEventListener('load', function () { renderAll(); });
+  var resizeTimer = 0;
+  window.addEventListener('resize', function () {
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () { resizeTimer = 0; renderAll(); }, 150);
+  });
+  if (window.matchMedia) {
+    var watchDpr = function () {
+      var dpr = window.devicePixelRatio || 1;
+      var mq = window.matchMedia('(resolution: ' + dpr + 'dppx)');
+      var onChange = function () { renderAll(); watchDpr(); };
+      if (mq.addEventListener) mq.addEventListener('change', onChange);
+      else if (mq.addListener) mq.addListener(onChange);
+    };
+    watchDpr();
+  }
+})();
+</script>
 </body>
 </html>
