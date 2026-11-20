@@ -416,19 +416,17 @@
   .work-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; padding-top: .25em; font-size: 12px; color: var(--muted); }
   .tag { display: inline-block; border: 1px solid var(--hair); border-radius: 999px; padding: 3px 10px; font-size: 10.5px; letter-spacing: .05em; color: var(--ink); white-space: nowrap; }
 
+  /* 作品卡内嵌视频 / 经历配图 */
+  .work-video { margin: 16px 0 0; max-width: 68ch; }
+  .work-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9;
+                      background: #101210; border: 1px solid var(--hair); }
+  .work-video figcaption { margin: 8px 0 0; display: flex; flex-wrap: wrap; justify-content: space-between;
+                           gap: 4px 16px; font-size: 11.5px; line-height: 1.6; color: var(--muted); }
+  .work-video figcaption b { color: var(--ink); font-weight: 700; letter-spacing: .02em; }
+  .xp-figure { margin: 13px 0 0; max-width: 46ch; }
+  .xp-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--hair); }
+  .xp-figure figcaption { margin: 7px 0 0; font-size: 11.5px; line-height: 1.6; color: var(--muted); }
   /* photography */
-  /* Video */
-  .video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 34px); }
-  .video-item { margin: 0; display: flex; flex-direction: column; gap: 10px; }
-  .video-item video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #101210;
-                      border: 1px solid var(--hair); }
-  .video-item--wide { grid-column: 1 / -1; }
-  .video-cap { margin: 2px 0 0; max-width: 78ch; font-size: 13px; line-height: 1.8; color: #4c5149; }
-  .video-cap b { font-weight: 700; color: var(--ink); }
-  .video-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
-  .video-title { font-size: 13.5px; line-height: 1.5; letter-spacing: .01em; }
-  .video-sub { font-size: 11px; color: var(--muted); letter-spacing: .08em; white-space: nowrap; }
-  @media (max-width: 860px) { .video-grid { grid-template-columns: minmax(0, 1fr); } }
   .photo-grid { column-count: 3; column-gap: 19px; }
   .photo { display: block; width: 100%; margin: 0 0 19px; padding: 0; border: 0; background: none; break-inside: avoid; page-break-inside: avoid; cursor: zoom-in; }
   .photo img { display: block; width: 100%; height: auto; border-radius: 2px; }
@@ -512,7 +510,6 @@
         <ul class="nav-links">
           <li><a href="#home">首页</a></li>
           <li><a href="#works">作品</a></li>
-          <li><a href="#video">视频</a></li>
           <li><a href="#photo">摄影</a></li>
           <li><a href="#experience">经历</a></li>
           <li><a href="#honors">荣誉</a></li>
@@ -613,6 +610,14 @@
               <h3 class="work-title">《山月记》AIGC 短片</h3>
               <p class="work-meta-line">14 分镜 · AI 生图 + AI 配音 + 人工剪辑 · 全流程独立完成</p>
               <p class="work-text">从文学文本出发完成分镜设计，用 AI 工具生成视觉与声音，再以人工剪辑把控节奏与叙事。作品在技术与表达之间找到平衡，完成一次完整的「AI 辅助创作」实验。</p>
+              <figure class="work-video">
+                <video controls preload="none" playsinline width="1280" height="720"
+                       poster="assets/video/shanyueji-clip-poster.webp">
+                  <source src="assets/video/shanyueji-clip.mp4" type="video/mp4">
+                  你的浏览器不支持内嵌视频，可<a href="assets/video/shanyueji-clip.mp4">直接打开片段</a>。
+                </video>
+                <figcaption><b>片段节选 · 2:20</b><span>全片 7:45 · 点开才加载</span></figcaption>
+              </figure>
               <p class="work-note">Award · 「AIGC For Future」全球挑战赛 — 二等奖（Second Prize）· 此前获亚太区三等奖</p>
               
             </div>
@@ -767,6 +772,14 @@
               <h3 class="work-title">AI 视频系列「四大天王 VS 畸王龙」· 抖音账号「Ray.」</h3>
               <p class="work-meta-line">AI 生成视频 · 抖音账号「Ray.」（抖音号 95568538139）· 合集更新至 6 集</p>
               <p class="work-text">用 AI 生成影像制作的「AI 真实版」怪兽对战系列（#侏罗纪世界 #霸王龙 #AI）。抖音账号「Ray.」粉丝 3 → 1,905、累计获赞 5.8 万、系列 6 集合计播放 206.3 万、单条最高播放 132.6 万、6 集里 4 集播放破 10 万（数据截至 2026-11，仍在增长）；平台对作品标注「疑似使用了 AI 生成技术」。</p>
+              <figure class="work-video">
+                <video controls preload="none" playsinline width="1280" height="720"
+                       poster="assets/video/ray-compare-poster.webp">
+                  <source src="assets/video/ray-compare.mp4" type="video/mp4">
+                  你的浏览器不支持内嵌视频，可<a href="assets/video/ray-compare.mp4">直接打开这一条</a>。
+                </video>
+                <figcaption><b>单集成片 · 画质增强对比（同一镜头处理前后）</b><span>00:21 · 1.0 MB</span></figcaption>
+              </figure>
             </div>
             <div class="work-meta">
               <span class="tag">AI 视频</span>
@@ -779,7 +792,14 @@
               <h3 class="work-title">新闻情报助手（News Intel）· 本地新闻情报系统</h3>
               <p class="work-meta-line">借助 AI 完成 · Flask + SQLite 单机 · 约 20 个核心模块 · 139 条自动化测试 · 引文回原文命中率 84% · 2026-11</p>
               <p class="work-text">RSS 自动采集 → 四道判据去重 → 关键词监测 → AI 八项结构化分析 → 事件聚合 → 资料库。核心是「可核查」：每个字段强制原文引证、脚本逐字回原文校验，对不上整条丢弃；重要性评分由代码加权复算，证据不足即返回「无法判断」。实测入库 968 篇、AI 分析 1015 次；单篇分析成本约 0.015 元。</p>
-              <p class="work-links"><a href="assets/news-intel-promo.mp4" target="_blank" rel="noopener noreferrer">观看宣传片（45 秒）↗</a></p>
+              <figure class="work-video">
+                <video controls preload="none" playsinline width="1280" height="720"
+                       poster="assets/video/news-intel-poster.webp">
+                  <source src="assets/news-intel-promo.mp4" type="video/mp4">
+                  你的浏览器不支持内嵌视频，可<a href="assets/news-intel-promo.mp4">直接打开宣传片</a>。
+                </video>
+                <figcaption><b>宣传片 · 45 秒</b><span>点开才加载</span></figcaption>
+              </figure>
             </div>
             <div class="work-meta">
               <span class="tag">借助 AI 完成</span>
@@ -790,123 +810,6 @@
       </div>
     </section>
 
-    <section class="section" id="video">
-      <div class="shell">
-        <header class="section-head">
-          <div class="section-heading">
-            <p class="eyebrow">Motion</p>
-            <h2 class="section-title">视频</h2>
-          </div>
-          <div class="section-aside">
-            <div class="section-decor" data-shape="bars" aria-hidden="true"><canvas aria-hidden="true"></canvas></div>
-          </div>
-        </header>
-        <p class="section-note">AI 影像与剪辑成品：AIGC 短片《山月记》全片、抖音「Ray.」《四大天王 VS 畸王龙》AI 系列 6 集、同一镜头的原片/增强对比，以及 News Intel 宣传片。视频默认不预载、不自动播放，点下播放键才开始加载。</p>
-        <div class="video-grid">
-          <figure class="video-item video-item--wide">
-            <video controls preload="none" playsinline width="1280" height="720"
-                   poster="assets/video/shanyueji-poster.webp">
-              <source src="assets/video/shanyueji-film.mp4" type="video/mp4">
-              你的浏览器不支持内嵌视频，可<a href="assets/video/shanyueji-film.mp4">直接打开全片</a>。
-            </video>
-            <figcaption class="video-meta">
-              <span class="video-title">《山月记》· AIGC 短片全片</span>
-              <span class="video-sub">07:45 · 53.0 MB</span>
-            </figcaption>
-            <p class="video-cap">改编自中岛敦《山月记》：<b>14 个分镜</b>，AI 生图 + 配音 + 音效，人工完成剪辑与节奏。获 <b>2026 全球数字经济创新大赛 AIGC For Future 全球挑战赛 · 国际二等奖（同获亚太区三等奖）</b>。</p>
-          </figure>
-          <figure class="video-item">
-            <video controls preload="none" playsinline width="1280" height="720"
-                   poster="assets/video/ray-ep1-poster.webp">
-              <source src="assets/video/ray-ep1.mp4" type="video/mp4">
-              你的浏览器不支持内嵌视频，可<a href="assets/video/ray-ep1.mp4">直接打开这一集</a>。
-            </video>
-            <figcaption class="video-meta">
-              <span class="video-title">「四大天王 VS 畸王龙」第 01 集</span>
-              <span class="video-sub">00:21 · 2.2 MB</span>
-            </figcaption>
-          </figure>
-          <figure class="video-item">
-            <video controls preload="none" playsinline width="1280" height="720"
-                   poster="assets/video/ray-ep2-poster.webp">
-              <source src="assets/video/ray-ep2.mp4" type="video/mp4">
-              你的浏览器不支持内嵌视频，可<a href="assets/video/ray-ep2.mp4">直接打开这一集</a>。
-            </video>
-            <figcaption class="video-meta">
-              <span class="video-title">「四大天王 VS 畸王龙」第 02 集</span>
-              <span class="video-sub">00:52 · 5.7 MB</span>
-            </figcaption>
-          </figure>
-          <figure class="video-item">
-            <video controls preload="none" playsinline width="1280" height="720"
-                   poster="assets/video/ray-ep3-poster.webp">
-              <source src="assets/video/ray-ep3.mp4" type="video/mp4">
-              你的浏览器不支持内嵌视频，可<a href="assets/video/ray-ep3.mp4">直接打开这一集</a>。
-            </video>
-            <figcaption class="video-meta">
-              <span class="video-title">「四大天王 VS 畸王龙」第 03 集</span>
-              <span class="video-sub">00:24 · 2.6 MB</span>
-            </figcaption>
-          </figure>
-          <figure class="video-item">
-            <video controls preload="none" playsinline width="1280" height="720"
-                   poster="assets/video/ray-ep4-poster.webp">
-              <source src="assets/video/ray-ep4.mp4" type="video/mp4">
-              你的浏览器不支持内嵌视频，可<a href="assets/video/ray-ep4.mp4">直接打开这一集</a>。
-            </video>
-            <figcaption class="video-meta">
-              <span class="video-title">「四大天王 VS 畸王龙」第 04 集</span>
-              <span class="video-sub">00:29 · 3.2 MB</span>
-            </figcaption>
-          </figure>
-          <figure class="video-item">
-            <video controls preload="none" playsinline width="1280" height="720"
-                   poster="assets/video/ray-ep5-poster.webp">
-              <source src="assets/video/ray-ep5.mp4" type="video/mp4">
-              你的浏览器不支持内嵌视频，可<a href="assets/video/ray-ep5.mp4">直接打开这一集</a>。
-            </video>
-            <figcaption class="video-meta">
-              <span class="video-title">「四大天王 VS 畸王龙」第 05 集</span>
-              <span class="video-sub">00:49 · 5.4 MB</span>
-            </figcaption>
-          </figure>
-          <figure class="video-item">
-            <video controls preload="none" playsinline width="1280" height="720"
-                   poster="assets/video/ray-ep6-poster.webp">
-              <source src="assets/video/ray-ep6.mp4" type="video/mp4">
-              你的浏览器不支持内嵌视频，可<a href="assets/video/ray-ep6.mp4">直接打开这一集</a>。
-            </video>
-            <figcaption class="video-meta">
-              <span class="video-title">「四大天王 VS 畸王龙」第 06 集</span>
-              <span class="video-sub">00:37 · 4.0 MB</span>
-            </figcaption>
-          </figure>
-          <figure class="video-item">
-            <video controls preload="none" playsinline width="1280" height="720"
-                   poster="assets/video/ray-compare-poster.webp">
-              <source src="assets/video/ray-compare.mp4" type="video/mp4">
-              你的浏览器不支持内嵌视频，可<a href="assets/video/ray-compare.mp4">直接打开对比片</a>。
-            </video>
-            <figcaption class="video-meta">
-              <span class="video-title">原片 vs 增强对比 · 同一镜头处理前后</span>
-              <span class="video-sub">00:21 · 1.0 MB</span>
-            </figcaption>
-            <p class="video-cap">同一镜头的 AI 生成素材与成片对比：调色、剪辑、增强之后才进正片。</p>
-          </figure>
-          <figure class="video-item">
-            <video controls preload="none" playsinline width="1280" height="720"
-                   poster="assets/video/news-intel-poster.webp">
-              <source src="assets/news-intel-promo.mp4" type="video/mp4">
-              你的浏览器不支持内嵌视频，可<a href="assets/news-intel-promo.mp4">直接打开宣传片</a>。
-            </video>
-            <figcaption class="video-meta">
-              <span class="video-title">News Intel · 宣传片</span>
-              <span class="video-sub">00:45 · 3.4 MB</span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
 
     <section class="section" id="photo">
       <div class="shell">
@@ -1011,10 +914,17 @@
           </li>
           <li class="xp">
             <p class="xp-year">2026.11—</p>
-            <h3 class="xp-title">学生工作处 · AI 视频</h3>
+            <h3 class="xp-title">学生工作处 新闻中心 · AI 视频</h3>
             <p class="xp-sub">AI 视频制作</p>
-            <!-- TODO 待用户补充：单位全称、已完成的 AI 视频条数与类型、能否署名发布；在补齐前这行正文保持为空，不编内容 -->
-            <p class="xp-text"></p>
+            <p class="xp-text">参与 AI 短剧《华科大故事》（即梦短剧）第 6 集的采访页面片段制作。</p>
+            <!-- TODO 待用户补充：已完成条数与类型、能否署名发布；补齐前只写截图里能确认的事实 -->
+            <figure class="xp-figure">
+              <img src="assets/xuegongchu-xinwen-zhongxin-still.webp"
+                   srcset="assets/xuegongchu-xinwen-zhongxin-still-800.webp 800w, assets/xuegongchu-xinwen-zhongxin-still.webp 1600w"
+                   sizes="(max-width: 860px) 92vw, 520px" width="1600" height="909" loading="lazy" decoding="async"
+                   alt="AI 短剧《华科大故事》第 6 集画面：人物眼镜上映出「在offer来临之」字样">
+              <figcaption>剧照 · AI 短剧《华科大故事》第 6 集 · 采访页面片段。作品参赛中，视频暂不公开。</figcaption>
+            </figure>
           </li>
         </ol>
       </div>
