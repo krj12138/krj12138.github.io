@@ -416,6 +416,15 @@
   .work-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; padding-top: .25em; font-size: 12px; color: var(--muted); }
   .tag { display: inline-block; border: 1px solid var(--hair); border-radius: 999px; padding: 3px 10px; font-size: 10.5px; letter-spacing: .05em; color: var(--ink); white-space: nowrap; }
 
+  /* 作品卡：数据强调块 / 版面图 / 内嵌视频 / 经历配图 */
+  .work-stat { margin: 15px 0 0; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .work-stat b { font-family: var(--serif); font-size: clamp(24px, 2.4vw, 30px); font-weight: 400;
+                 line-height: 1; letter-spacing: -.01em; }
+  .work-stat span { font-size: 11px; letter-spacing: .16em; color: var(--muted); text-transform: uppercase; }
+  .work-figure { margin: 16px 0 0; max-width: 68ch; }
+  .work-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--hair); }
+  .work-figure--narrow { max-width: 300px; }
+  .work-figure figcaption { margin: 8px 0 0; font-size: 11.5px; line-height: 1.6; color: var(--muted); }
   /* 作品卡内嵌视频 / 经历配图 */
   .work-video { margin: 16px 0 0; max-width: 68ch; }
   .work-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9;
@@ -594,7 +603,8 @@
             <span class="work-no">01</span>
             <div class="work-body">
               <h3 class="work-title">《再评祁连：没什么好委屈，补救遮掩不了错判》</h3>
-              <p class="work-meta-line">曹林教授公众号「吐槽青年博士」· 2026-10-11 发布 · 浏览量 1.6 万+ · 署名「吐槽青年出品 匡锐健」</p>
+              <p class="work-meta-line">曹林教授公众号「吐槽青年博士」· 2026-10-11 发布 · 署名「吐槽青年出品 匡锐健」</p>
+              <p class="work-stat"><b>1.6 万+</b><span>公众号浏览量</span></p>
               <p class="work-text">评祁连县腾学生宿舍安置游客事件。围绕当地「补救已到位、不必再苛责」的说法，逐条追问：被腾出来的是学生宿舍、成本落到了谁身上、为什么应急选项里总先动学生。文章从县内可用公共空间、应急方案与成本分担三条线展开，梳理「谁的成本」这一判断标准。</p>
               <p class="work-note">推荐语 · 曹林：「有自己的背景调查视角」</p>
               <p class="work-links"><a href="https://mp.weixin.qq.com/s/2GOHwMTH1j2Uz0FCnje7uA" target="_blank" rel="noopener noreferrer">WeChat 阅读原文 ↗</a></p>
@@ -629,6 +639,26 @@
           <li class="work">
             <span class="work-no">03</span>
             <div class="work-body">
+              <h3 class="work-title">AI 短剧《华科大故事》· 即梦短剧</h3>
+              <p class="work-meta-line">学生工作处 新闻中心 · 2026.11— · 参与第 6 集制作</p>
+              <p class="work-text">在即梦短剧《华科大故事》第 6 集中参与「采访页面」片段制作：画面主体是一张巨大的网页界面，两位角色立于页面之前，低饱和蓝金影调。作品参赛中，视频暂不公开。</p>
+              <figure class="work-figure">
+                <img src="assets/xuegongchu-xinwen-zhongxin-still.webp"
+                     srcset="assets/xuegongchu-xinwen-zhongxin-still-800.webp 800w, assets/xuegongchu-xinwen-zhongxin-still.webp 1600w"
+                     sizes="(max-width: 860px) 92vw, 640px" width="1600" height="909"
+                     loading="lazy" decoding="async"
+                     alt="AI 短剧《华科大故事》第 6 集画面：人物眼镜上映出「在offer来临之」字样">
+                <figcaption>剧照 · AI 短剧《华科大故事》第 6 集 · 采访页面片段。作品参赛中，视频暂不公开。</figcaption>
+              </figure>
+            </div>
+            <div class="work-meta">
+              <span class="tag">AI 短剧</span>
+              <time>2026.11—</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">04</span>
+            <div class="work-body">
               <h3 class="work-title">公众号「围坐闲谈」</h3>
               <p class="work-meta-line">主理人 · 独立运营 · 2026.05—09 已发布署名文章 6 篇</p>
               <p class="work-text">从零运营的个人公众号：独立完成选题、撰稿、排版与数据复盘，策划「开卷」文化观察与「折角」影视评论两个栏目，以真诚表达连接同龄人。</p>
@@ -641,25 +671,17 @@
             </div>
           </li>
           <li class="work">
-            <span class="work-no">04</span>
-            <div class="work-body">
-              <h3 class="work-title">「树下说」内容系列 · 多平台发布</h3>
-              <p class="work-meta-line">抖音「树下说」/ B站「贝多树下说」· 八苦系列已更新四集 · 单人完成全流程</p>
-              <p class="work-text">用故事和具体场景讲佛学概念，不讲经、不说教，3—5 分钟一集；已完成「三苦」「无常」「怨憎会」「爱别离」四集（脚本＋音频＋横竖双版本）。选题、脚本、画面、配音、剪辑与发布由我单人完成。</p>
-              
-              <p class="work-links"><a href="https://www.douyin.com/" target="_blank" rel="noopener noreferrer">Douyin「树下说」 ↗</a><span class="work-links-sep" aria-hidden="true">·</span><a href="https://space.bilibili.com/" target="_blank" rel="noopener noreferrer">Bilibili「贝多树下说」 ↗</a></p>
-            </div>
-            <div class="work-meta">
-              <span class="tag">视频创作</span>
-              <time>—</time>
-            </div>
-          </li>
-          <li class="work">
             <span class="work-no">05</span>
             <div class="work-body">
               <h3 class="work-title">《7年5轮诉讼、176位船民：一张“便条”引发的拉锯战 | 红星深度》</h3>
               <p class="work-meta-line">实习生署名 · 参与实地采访与素材收集 · 红星新闻深度频道 2026-04-10 刊发</p>
               <p class="work-text">报道由红星新闻记者胡闲鹤采写，本人以实习生身份参与实地采访与素材收集，刊发后经腾讯新闻、上游新闻等多家转载。另外独立完成东湖游船收购纠纷、武汉纺织工人等现场采访。</p>
+              <figure class="work-figure work-figure--narrow">
+                <img src="assets/hongxing-depth-2026-04-10.webp" width="340" height="542"
+                     loading="lazy" decoding="async"
+                     alt="红星新闻深度频道 2026-04-10 报道版面截图，署名为红星新闻记者 胡闲鹤 / 实习生 吴润泽 匡锐健">
+                <figcaption>报道版面 · 红星新闻深度频道 2026-04-10</figcaption>
+              </figure>
               
               
             </div>
@@ -685,20 +707,6 @@
           <li class="work">
             <span class="work-no">07</span>
             <div class="work-body">
-              <h3 class="work-title">「返家乡」红石榴宣讲实践</h3>
-              <p class="work-meta-line">材料部组长 · 2026.01 — 2026.02</p>
-              <p class="work-text">统筹宣讲材料全链路：问卷设计与数据统计、案例筛选与内容整理，让宣讲既有依据也有温度。</p>
-              <p class="work-note">获返家乡宣讲实习证明</p>
-              
-            </div>
-            <div class="work-meta">
-              <span class="tag">社会实践</span>
-              <time>2026.01—02</time>
-            </div>
-          </li>
-          <li class="work">
-            <span class="work-no">08</span>
-            <div class="work-body">
               <h3 class="work-title">原创 AI 歌曲《铅字山河》</h3>
               <p class="work-meta-line">歌词 + 编曲构思 · AI 音乐辅助创作 · 合作署名：吴润泽、匡锐健</p>
               <p class="work-text">以「铅字」意象致敬新闻与出版，用新工具表达老主题——创作本身就是一场与传统对话的尝试。</p>
@@ -711,11 +719,19 @@
             </div>
           </li>
           <li class="work">
-            <span class="work-no">09</span>
+            <span class="work-no">08</span>
             <div class="work-body">
               <h3 class="work-title">英语短片《The Hot-Dry Noodle Index》</h3>
               <p class="work-meta-line">2026「外研社 · 国才杯」英语组短视频赛项（主题「数说中国」）· 2026-10-08 定稿 · 团队作品 · 本人担任剪辑</p>
               <p class="work-text">以一碗热干面 50 年的价格史与购买力反转，呈现中国发展变迁。约 3 分钟、中英双语字幕；脚本由团队共同打磨、旁白为团队成员英语配音，本人负责全片剪辑、节奏与字幕包装。</p>
+              <figure class="work-video">
+                <video controls preload="none" playsinline width="1280" height="720"
+                       poster="assets/video/hotdrynoodle-clip-poster.webp">
+                  <source src="assets/video/hotdrynoodle-clip.mp4" type="video/mp4">
+                  你的浏览器不支持内嵌视频，可<a href="assets/video/hotdrynoodle-clip.mp4">直接打开片段</a>。
+                </video>
+                <figcaption><b>片段节选 · 1:04</b><span>全片约 3 分钟 · 点开才加载</span></figcaption>
+              </figure>
               <p class="work-note">Award · 「外研社 · 国才杯」短视频赛项 湖北省决赛 — 铜奖（2026-10-25）</p>
               
             </div>
@@ -725,7 +741,7 @@
             </div>
           </li>
           <li class="work">
-            <span class="work-no">10</span>
+            <span class="work-no">09</span>
             <div class="work-body">
               <h3 class="work-title">《从书架到货架！湖北高校 57 项优质成果“打包”寻对接》</h3>
               <p class="work-meta-line">极目新闻（湖北日报传媒集团）· 2026-10-16 发布 · 本人负责撰稿与现场拍摄</p>
@@ -739,7 +755,7 @@
             </div>
           </li>
           <li class="work">
-            <span class="work-no">11</span>
+            <span class="work-no">10</span>
             <div class="work-body">
               <h3 class="work-title">极目新闻「极目育见」视频号 · 短视频 5 条</h3>
               <p class="work-meta-line">极目新闻「极目育见」视频号 · 2026-09 至 2026-10 · 本人制作 · 署名「实习生 匡锐健」等</p>
@@ -753,7 +769,7 @@
             </div>
           </li>
           <li class="work">
-            <span class="work-no">12</span>
+            <span class="work-no">11</span>
             <div class="work-body">
               <h3 class="work-title">《读懂先生，读懂华科大：〈杨叔子全集〉编纂启动，六卷十七本预计明年出版》</h3>
               <p class="work-meta-line">极目新闻（湖北日报传媒集团）· 2026-10-28 发布 · 本人负责撰稿</p>
@@ -767,7 +783,7 @@
             </div>
           </li>
           <li class="work">
-            <span class="work-no">13</span>
+            <span class="work-no">12</span>
             <div class="work-body">
               <h3 class="work-title">AI 视频系列「四大天王 VS 畸王龙」· 抖音账号「Ray.」</h3>
               <p class="work-meta-line">AI 生成视频 · 抖音账号「Ray.」（抖音号 95568538139）· 合集更新至 6 集</p>
@@ -784,6 +800,20 @@
             <div class="work-meta">
               <span class="tag">AI 视频</span>
               <time>2026-11</time>
+            </div>
+          </li>
+          <li class="work">
+            <span class="work-no">13</span>
+            <div class="work-body">
+              <h3 class="work-title">「返家乡」红石榴宣讲实践</h3>
+              <p class="work-meta-line">材料部组长 · 2026.01 — 2026.02</p>
+              <p class="work-text">统筹宣讲材料全链路：问卷设计与数据统计、案例筛选与内容整理，让宣讲既有依据也有温度。</p>
+              <p class="work-note">获返家乡宣讲实习证明</p>
+              
+            </div>
+            <div class="work-meta">
+              <span class="tag">社会实践</span>
+              <time>2026.01—02</time>
             </div>
           </li>
           <li class="work">
@@ -995,10 +1025,6 @@
         <ul class="contact-list">
           <li>
             <span class="contact-label">Email</span>
-            <span class="contact-value"><a href="mailto:2124582399@qq.com">2124582399@qq.com</a></span>
-          </li>
-          <li>
-            <span class="contact-label">Email</span>
             <span class="contact-value"><a href="mailto:kuangruijian@163.com">kuangruijian@163.com</a></span>
           </li>
           <li>
@@ -1077,7 +1103,6 @@
         '原创 AI 歌曲《铅字山河》——「党报里的中国」三等奖：用新工具表达老主题',
         '英语短片《The Hot-Dry Noodle Index》——「外研社·国才杯」湖北省决赛铜奖，本人剪辑',
         '个人公众号「围坐闲谈」6 篇署名文章，单篇最高阅读 1 万＋',
-        '「树下说」系列 4 集，选题、脚本、配音到发布单人完成',
         '抖音 AI 视频系列「四大天王 VS 畸王龙」6 集——账号「Ray.」粉丝 3 → 1,905、系列播放 206.3 万、单条最高播放 132.6 万（截至 2026-11，仍在增长）'
       ]
     },
